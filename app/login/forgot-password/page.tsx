@@ -20,10 +20,10 @@ export default function ForgotPasswordPage() {
             <div className="w-full md:w-[500px] space-y-8">
                 <EmailInput value={email} onChange={handleEmailChange} label="Email address" placeholder="youremail@example.com" />
                 <div className="flex justify-center">
-                    <Button content="Send reset link" href="/" />
+                    <Button content="Send reset link" href="/login/reset-password" />
                 </div>
             </div>
-            <Link href={"/login"} className="inline-block nav-link text-sm text-[#94C7A8] text-sm leading-5 font-normal">Back to login</Link>
+            <Link href={"/login"} className="inline-block nav-link text-sm text-[#94C7A8] leading-5 font-normal">Back to login</Link>
         </section>
     )
 }

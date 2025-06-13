@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 export default function Home() {
+  // Cards data
   const cards = [
     {
       title: "Save Time",
@@ -22,6 +23,7 @@ export default function Home() {
       img: "/cost.svg",
     },
   ];
+  
   return (
     <section>
       <div className="py-10 px-10 md:px-20 lg:px-40 bg-[#122117] h-full">
@@ -44,7 +46,7 @@ export default function Home() {
                 agricultural tools, allowing you to save time, labor, and money.
               </p>
               <div className="flex justify-center mt-6">
-                <Button content="Get Started" href="/login" />
+                <Button content="Get Started" href="/sign-up" />
               </div>
             </div>
           </div>

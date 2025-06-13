@@ -3,22 +3,26 @@
 import { useState } from "react";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 
+type PasswordInputProps = {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  label: string;
+  isLabelShown?: boolean;
+}
+
 export default function PasswordInput ({
   value,
   onChange,
   placeholder = "Enter your password",
-  label = "Password"
-}: {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  label: string
-}) {
+  label = "Password",
+  isLabelShown = true,
+}: PasswordInputProps) {
 
     const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="space-y-2.5 md:space-y-5">
-        <label htmlFor="" className="text-sm font-medium leading-6 block">{label}</label>
+    <div className="space-y-2.5 md:space-y-3">
+        {isLabelShown && <label htmlFor="" className="text-sm font-medium leading-6 block">{label}</label>}
         <div className="relative">
             <input
             type={showPassword ? "text" :"password"}
