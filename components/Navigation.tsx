@@ -30,9 +30,20 @@ export default function Navigation() {
       <RiMenu2Fill onClick={toggleMenu} className="text-white text-3xl md:hidden hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300" />
 
       {isMenuOpen && (
-        <section>
-
-        </section>
+        <div className="flex justify-center items-center absolute top-20 right-0 w-full">
+          <section className="bg-[#A6F2C4] w-[90%] md:hidden flex justify-start items-center p-2 border-t border-[#E5E8EB] z-10 rounded-xl shadow-lg">
+            <ul className="text-[#122117] text-sm font-light w-full">
+              {links.map((link, index) => (
+                <li
+                  key={index}
+                  className="hover:cursor-pointer hover:text-[#A6F2C4] border-b border-[#122117] py-1.5 px-4"
+                >
+                  {link}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       )}
     </nav>
   );
