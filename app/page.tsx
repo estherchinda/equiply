@@ -44,7 +44,7 @@ export default function Home() {
                 agricultural tools, allowing you to save time, labor, and money.
               </p>
               <div className="flex justify-center mt-6">
-                <Button content="Get Started" />
+                <Button content="Get Started" href="/login" />
               </div>
             </div>
           </div>
