@@ -58,7 +58,7 @@ export default function SignUpPage() {
           label="Enter password"
         />
         <div className="w-full">
-          <Button content="Sign up" href="/user/dashboard" />
+          <Button content="Sign up" href="/user/home" />
         </div>
         <p className="text-[#94C7A8] text-sm leading-5 font-normal text-center">
           Already have an account?{" "}
