@@ -68,6 +68,7 @@ export default function Sidebar() {
           width={200}
           height={200}
           style={{ width: "auto", height: "auto" }}
+          priority
         />
       </Link>
 

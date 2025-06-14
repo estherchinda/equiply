@@ -19,7 +19,7 @@ export default function Navigation() {
   return (
     <nav className="h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex justify-between items-center border-b border-[#E5E8EB]">
       <Link href={"/"}>
-        <Image src={"/logo.svg"} alt="Equiply 2025." width={200} height={200} style={{'width': 'auto', 'height': 'auto'}} />
+        <Image src={"/logo.svg"} alt="Equiply 2025." width={200} height={200} style={{'width': 'auto', 'height': 'auto'}} priority />
       </Link>
 
     {pathname.startsWith("/user") ? (
@@ -29,9 +29,10 @@ export default function Navigation() {
           <Image
             src="/pfp.jpeg"
             alt="Profile picture"
-            width={40}
+            width={50}
             height={40}
             className="w-full h-full object-cover rounded-full"
+            style={{'width': 'auto', 'height': 'auto'}}
           />
         </Link>
       </div>
