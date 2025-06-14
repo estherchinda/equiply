@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { RiMenu2Fill } from "react-icons/ri";
 import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { RiMenu2Fill } from "react-icons/ri";
+import SearchInput from "@/app/ui/forms/SearchInput";;
 
 export default function Navigation() {
   const links = ["About", "How it works", "Contact"];
+  const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -19,6 +22,20 @@ export default function Navigation() {
         <Image src={"/logo.svg"} alt="Equiply 2025." width={200} height={200} style={{'width': 'auto', 'height': 'auto'}} />
       </Link>
 
+    {pathname.startsWith("/user") ? (
+      <div className="hidden md:flex gap-3">
+        <SearchInput />
+        <Link href={"/user/profile"} className="h-[40px] w-[50px] rounded-full overflow-hidden">
+          <Image
+            src="/pfp.jpeg"
+            alt="Profile picture"
+            width={40}
+            height={40}
+            className="w-full h-full object-cover rounded-full"
+          />
+        </Link>
+      </div>
+    ) : (
       <ul className="text-white gap-9 hidden md:flex">
         {links.map((link, index) => (
           <li
@@ -29,6 +46,7 @@ export default function Navigation() {
           </li>
         ))}
       </ul>
+    )}
 
       <RiMenu2Fill onClick={toggleMenu} className="text-white text-3xl md:hidden hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300" />
 
