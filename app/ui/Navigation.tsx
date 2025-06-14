@@ -16,6 +16,11 @@ export default function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const [query, setQuery] = useState("");
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <nav className="h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex justify-between items-center border-b border-[#E5E8EB]">
       <Link href={"/"}>
@@ -24,7 +29,7 @@ export default function Navigation() {
 
     {pathname.startsWith("/user") ? (
       <div className="hidden md:flex gap-3">
-        <SearchInput />
+        <SearchInput value={query} onChange={handleSearch} />
         <Link href={"/user/profile"} className="h-[40px] w-[50px] rounded-full overflow-hidden">
           <Image
             src="/pfp.jpeg"
@@ -53,12 +58,12 @@ export default function Navigation() {
 
       {isMenuOpen && (
         <div className="flex justify-center items-center absolute top-20 right-0 w-full">
-          <section className="bg-[#A6F2C4] w-[90%] md:hidden flex justify-start items-center p-2 border-t border-[#E5E8EB] z-10 rounded-xl shadow-lg">
-            <ul className="text-[#122117] text-sm font-light w-full">
+          <section className="bg-[#264533] w-[90%] md:hidden flex justify-start items-center p-2 z-10 rounded-xl shadow-lg">
+            <ul className="text-white text-sm font-light w-full">
               {links.map((link, index) => (
                 <li
                   key={index}
-                  className="hover:cursor-pointer hover:text-[#A6F2C4] border-b border-[#122117] py-1.5 px-4"
+                  className="hover:cursor-pointer hover:text-[#A6F2C4] py-1.5 px-4"
                 >
                   {link}
                 </li>

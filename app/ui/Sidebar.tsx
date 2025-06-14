@@ -21,8 +21,8 @@ import {
 export default function Sidebar() {
   const navigations = [
     {
-      name: "Dashboard",
-      href: "/user/dashboard",
+      name: "Home",
+      href: "/user/home",
       icon: RiHome6Line,
       iconActive: RiHome6Fill,
     },

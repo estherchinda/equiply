@@ -60,7 +60,7 @@ export default function LoginPage() {
           </p>
         </div>
         <div className="w-full">
-          <Button content="Login" href="/user/dashboard" />
+          <Button content="Login" href="/user/home" />
         </div>
       </div>
     </section>
