@@ -33,7 +33,7 @@ export default function Dashboard() {
             </div>
 
             {/* tools grid */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {tools.map(tool => (
                     <div key={tool.id} className="space-y-2">
                         <div className="h-[100px] w-full md:w-[170px] rounded-[12px] bg-[#264533] animate-pulse"></div>
