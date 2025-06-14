@@ -1,6 +1,11 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
+  const pathname = usePathname();
+
   const links = ["Terms of Service", "Privacy Policy", "Contact Us"];
-  return (
+  return !pathname.startsWith("/user") && (
     <footer className="h-[150px] bg-[#122117] px-10 md:px-20 lg:px-40 flex justify-center items-start md:items-center flex-col gap-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full">
         {links.map((link, index) => (
