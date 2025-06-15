@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  RiHome6Line,
-  RiHome6Fill,
+  RiToolsLine,
+  RiToolsFill,
   RiCalendar2Line,
   RiCalendarFill,
   RiListIndefinite,
@@ -21,10 +21,16 @@ import {
 export default function Sidebar() {
   const navigations = [
     {
-      name: "Home",
-      href: "/user/home",
-      icon: RiHome6Line,
-      iconActive: RiHome6Fill,
+      name: "Tools",
+      href: "/user/tools",
+      icon: RiToolsLine,
+      iconActive: RiToolsFill,
+    },
+    {
+      name: "Profile",
+      href: "/user/profile",
+      icon: RiUser6Line,
+      iconActive: RiUser6Fill,
     },
     {
       name: "Rentals",
@@ -49,12 +55,6 @@ export default function Sidebar() {
       href: "/user/notifications",
       icon: RiNotification2Line,
       iconActive: RiNotification2Fill,
-    },
-    {
-      name: "Profile",
-      href: "/user/profile",
-      icon: RiUser6Line,
-      iconActive: RiUser6Fill,
     },
   ];
 

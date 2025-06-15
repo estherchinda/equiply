@@ -6,6 +6,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { RiMenu2Fill } from "react-icons/ri";
 import SearchInput from "@/app/ui/forms/SearchInput";;
+import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
 
 export default function Navigation() {
   const links = ["About", "How it works", "Contact"];
@@ -30,16 +31,9 @@ export default function Navigation() {
     {pathname.startsWith("/user") ? (
       <div className="hidden md:flex gap-3">
         <SearchInput value={query} onChange={handleSearch} />
-        <Link href={"/user/profile"} className="h-[40px] w-[50px] rounded-full overflow-hidden">
-          <Image
-            src="/pfp.jpeg"
-            alt="Profile picture"
-            width={50}
-            height={40}
-            className="w-full h-full object-cover rounded-full"
-            style={{'width': 'auto', 'height': 'auto'}}
-          />
-        </Link>
+        <div>
+          <ProfileImageComponent />
+        </div>
       </div>
     ) : (
       <ul className="text-white gap-9 hidden md:flex">
