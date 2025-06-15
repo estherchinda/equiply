@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { RiMenu2Fill } from "react-icons/ri";
 import SearchInput from "@/app/ui/forms/SearchInput";;
 import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
+import { navigations } from "../lib/sidebar";
 
 export default function Navigation() {
   const links = ["About", "How it works", "Contact"];
@@ -48,20 +49,30 @@ export default function Navigation() {
       </ul>
     )}
 
-      <RiMenu2Fill onClick={toggleMenu} className="text-white text-3xl md:hidden hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300" />
+      <RiMenu2Fill onClick={toggleMenu} className="text-white text-3xl md:hidden hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300 sticky top-0" />
 
       {isMenuOpen && (
         <div className="flex justify-center items-center absolute top-20 right-0 w-full">
           <section className="bg-[#264533] w-[90%] md:hidden flex justify-start items-center p-2 z-10 rounded-xl shadow-lg">
             <ul className="text-white text-sm font-light w-full">
-              {links.map((link, index) => (
-                <li
-                  key={index}
-                  className="hover:cursor-pointer hover:text-[#A6F2C4] py-1.5 px-4"
-                >
+              {!pathname.startsWith("/user") ? 
+              links.map((link, index) => (
+                <li key={index} className="hover:cursor-pointer hover:text-[#A6F2C4] py-1.5 px-4">
                   {link}
                 </li>
-              ))}
+              )) : navigations.map((nav, index) => {
+                const isActive = pathname.startsWith(nav.href);
+                const Icon = isActive ? nav.iconActive : nav.icon;
+                return (
+                <Link href={nav.href} key={index} >
+                  <li className="hover:cursor-pointer hover:text-[#A6F2C4] py-1.5 px-4 flex items-center gap-1">
+                    <Icon className={`${isActive && 'text-[#94C7A8]'} text-sm`}/>
+                    <span>{nav.name}</span>
+                  </li>
+                </Link>
+                )
+                })
+              }
             </ul>
           </section>
         </div>
