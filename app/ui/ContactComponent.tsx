@@ -18,7 +18,7 @@ export default function ContactComponent () {
           <div className="w-full md:w-[448px]">
             <TextareaInput value={message} onChange={handleMessageChange} />
           </div>
-          <div className="flex justify-end w-full mt-3">
+          <div className="flex justify-end w-full mt-3.5">
             <div className="w-full md:w-[200px]">
                 <Button content="Send message" />
             </div>
