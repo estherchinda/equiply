@@ -3,60 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  RiHome6Line,
-  RiHome6Fill,
-  RiCalendar2Line,
-  RiCalendarFill,
-  RiListIndefinite,
-  RiListCheck3,
-  RiMessage3Line,
-  RiMessage3Fill,
-  RiNotification2Line,
-  RiNotification2Fill,
-  RiUser6Line,
-  RiUser6Fill,
-} from "react-icons/ri";
+import { navigations } from "../lib/sidebar";
 
 export default function Sidebar() {
-  const navigations = [
-    {
-      name: "Home",
-      href: "/user/home",
-      icon: RiHome6Line,
-      iconActive: RiHome6Fill,
-    },
-    {
-      name: "Rentals",
-      href: "/user/rentals",
-      icon: RiCalendar2Line,
-      iconActive: RiCalendarFill,
-    },
-    {
-      name: "Listings",
-      href: "/user/listings",
-      icon: RiListIndefinite,
-      iconActive: RiListCheck3,
-    },
-    {
-      name: "Messages",
-      href: "/user/messages",
-      icon: RiMessage3Line,
-      iconActive: RiMessage3Fill,
-    },
-    {
-      name: "Notifications",
-      href: "/user/notifications",
-      icon: RiNotification2Line,
-      iconActive: RiNotification2Fill,
-    },
-    {
-      name: "Profile",
-      href: "/user/profile",
-      icon: RiUser6Line,
-      iconActive: RiUser6Fill,
-    },
-  ];
 
   const pathname = usePathname();
   return (

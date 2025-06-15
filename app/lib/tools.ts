@@ -1,8 +1,8 @@
 export const tools = [
   {
-    id: 1,
+    id: "1",
     toolType: "Tractor",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "This tractor is a versatile and powerful machine, perfect for a variety of farming tasks. It features a robust engine, comfortable seating, and intuitive controls, making it easy to operate even for long hours. The tractor is well-maintained and ready to work, ensuring reliable performance on your farm.",
     make: "John Deere",
@@ -23,9 +23,9 @@ export const tools = [
     distance: 2, // Distance in miles for local rentals
   },
   {
-    id: 2,
+    id: "2",
     toolType: "Plough",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Heavy-duty reversible plough ideal for breaking up tough soil and preparing the land for planting. Works well with medium to large tractors and ensures efficient tillage.",
     make: "Land Pride",
@@ -46,9 +46,9 @@ export const tools = [
     distance: 10, // Distance in miles for local rentals
   },
   {
-    id: 3,
+    id: "3",
     toolType: "Combine Harvester",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "This combine harvester offers excellent grain quality and low fuel consumption. Equipped with GPS guidance and auto-steer for efficient and stress-free harvesting.",
     make: "Case IH",
@@ -69,9 +69,9 @@ export const tools = [
     distance: 80, // Distance in miles for local rentals
   },
   {
-    id: 4,
+    id: "4",
     toolType: "Sprayer",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "High-capacity mounted sprayer suitable for large-scale pesticide and fertilizer application. Features include a durable boom, adjustable nozzles, and a corrosion-resistant tank.",
     make: "Hardi",
@@ -92,9 +92,9 @@ export const tools = [
     distance: 15, // Distance in miles for local rentals
   },
   {
-    id: 5,
+    id: "5",
     toolType: "Rotavator",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Efficient rotary tiller perfect for seedbed preparation and weed control. Lightweight yet powerful, suitable for tractors with lower horsepower.",
     make: "Shaktiman",
@@ -115,9 +115,9 @@ export const tools = [
     distance: 32, // Distance in miles for local rentals
   },
   {
-    id: 6,
+    id: "6",
     toolType: "Baler",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Round baler designed for quick, dense baling of hay and straw. Easy to attach and operate, ensures high output with minimal manpower.",
     make: "New Holland",
@@ -138,9 +138,9 @@ export const tools = [
     distance: 7, // Distance in miles for local rentals
   },
   {
-    id: 7,
+    id: "7",
     toolType: "Seeder",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Precision seed drill for uniform seed placement and reduced wastage. Enhances crop emergence and ensures optimal row spacing for increased yield.",
     make: "John Deere",
@@ -161,9 +161,9 @@ export const tools = [
     distance: 19, // Distance in miles for local rentals
   },
   {
-    id: 8,
+    id: "8",
     toolType: "Irrigation Pump",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "High-pressure diesel-powered irrigation pump ideal for large farmlands. Delivers consistent water flow and is easy to transport.",
     make: "Honda",
@@ -184,9 +184,9 @@ export const tools = [
     distance: 10, // Distance in miles for local rentals
   },
   {
-    id: 9,
+    id: "9",
     toolType: "Disc Harrow",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Heavy-duty disc harrow built for land leveling and breaking up tough clods. Durable steel frame and easily adjustable cutting angles.",
     make: "Mahindra",
@@ -207,9 +207,9 @@ export const tools = [
     distance: 20, // Distance in miles for local rentals
   },
   {
-    id: 10,
+    id: "10",
     toolType: "Power Tiller",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Compact and fuel-efficient power tiller suited for small to mid-sized farms. Features ergonomic controls and superior soil pulverizing capacity.",
     make: "Kubota",
@@ -230,9 +230,9 @@ export const tools = [
     distance: 20, // Distance in miles for local rentals
   },
   {
-    id: 11,
+    id: "11",
     toolType: "Manure Spreader",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Efficient PTO-driven manure spreader with even distribution and corrosion-resistant build. Ideal for organic farms and large-scale composting.",
     make: "Frontier",
@@ -253,9 +253,9 @@ export const tools = [
     distance: 80, // Distance in miles for local rentals
   },
   {
-    id: 12,
+    id: "12",
     toolType: "Grain Dryer",
-    image: "",
+    image: "/pfp.jpeg",
     description:
       "Mobile grain dryer for efficient post-harvest processing. Reduces grain moisture quickly and safely, preserving quality during storage.",
     make: "Alvan Blanch",
