@@ -8,6 +8,7 @@ import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
 import TextareaInput from "@/app/ui/forms/TextareaInput";
 import Button from "@/app/ui/forms/Button";
 
+// todo: figure out how to maintain client side components and fetch data from api without warnings or errors
 export default function ToolDetails({ params }: { params: { toolsId: string } }) {
   const tool = tools.find((t) => t.id === params.toolsId);
 
