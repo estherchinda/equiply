@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from "react";
 import TextareaInput from "@/app/ui/forms/TextareaInput";
+import HeadingComponent from "@/app/ui/HeadingComponent";
 import Button from "@/app/ui/forms/Button";
 
 export default function ContactComponent () {
@@ -14,7 +15,7 @@ export default function ContactComponent () {
 
     return (
         <div className="w-full">
-          <h2 className="text-[22px] font-bold leading-7 mb-5">Contact</h2>
+          <HeadingComponent content="Contact" marginBottom="5" />
           <div className="w-full md:w-[448px]">
             <TextareaInput value={message} onChange={handleMessageChange} />
           </div>
