@@ -4,7 +4,14 @@ import Link from "next/link";
 import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
 import ContactComponent from "@/app/ui/ContactComponent";
 
-export default async function ToolDetails({ params }: { params: { toolsId: string } }) {
+interface ToolDetailsProps {
+  params: {
+    toolsId: string;
+  };
+}
+
+
+export default async function ToolDetails({ params }: ToolDetailsProps) {
   const { toolsId } = params;
   const tool = tools.find((t) => t.id === toolsId);
 
