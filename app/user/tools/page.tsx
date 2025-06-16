@@ -22,7 +22,7 @@ export default function Dashboard() {
     const results = 123; //placeholder for results
 
     return (
-        <section className="py-3 md:mx-10 space-y-5 h-full">
+        <section className="py-3 md:mx-10 space-y-5">
             <SearchInput placeholder="Search for tools" value={query} onChange={handleSearch} />
             <div className="flex flex-col md:flex-row gap-2.5 items-start md:items-center">
                 <Dropdown options={categories} selected={selectedCategory} onSelect={setSelectedCategory} />

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Listings() {
   return (
-    <section className="h-full py-3 md:mx-10">
+    <section className="py-3 md:mx-10">
       <h2 className="text-[32px] font-bold leading-10 ">Your tools</h2>
 
       {/* tools */}
