@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { notifications } from "@/app/types/notifications";
-import NotificationRow from "@/app/ui/NotificationRow";
-import Heading from "@/app/ui/HeadingComponent";
+import NotificationRow from "@/app/ui/notifs/NotificationRow";
+import Heading from "@/app/ui/display/HeadingComponent";
 import type {
   NotificationStatus,
   NotificationType,
@@ -38,7 +38,15 @@ export default function Notifications() {
   });
 
   return (
-    <section className={(todayNotifs.length === 0 || yesterdayNotifs.length === 0 || lastWeekNotifs.length === 0) ? 'h-screen' : ''}>
+    <section
+      className={
+        todayNotifs.length === 0 ||
+        yesterdayNotifs.length === 0 ||
+        lastWeekNotifs.length === 0
+          ? "h-screen"
+          : ""
+      }
+    >
       <h1 className="text-[32px] font-bold leading-10">Notifications</h1>
 
       {/* Today */}

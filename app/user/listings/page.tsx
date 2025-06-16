@@ -1,5 +1,5 @@
 import { tools } from "@/app/lib/tools";
-import Tag from "@/app/ui/Tag";
+import Tag from "@/app/ui/display/Tag";
 import Link from "next/link";
 
 export default function Listings() {

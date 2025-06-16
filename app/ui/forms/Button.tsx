@@ -6,10 +6,11 @@ type ButtonProps = {
   content: string;
   href?: string;
   onClick?: () => void;
+  isSecondary?: boolean
 };
 
-export default function Button({ content, href, onClick }: ButtonProps) {
-  const classes = "bg-[#A6F2C4] rounded-3xl h-12 w-full text-[#122117] px-10 shadow-md leading-6 font-bold hover:cursor-pointer button";
+export default function Button({ content, href, onClick, isSecondary }: ButtonProps) {
+  const classes = `${isSecondary ? 'bg-[#264533] text-white hover:bg-[#1a352a] transition-colors duration-300' : 'bg-[#A6F2C4] text-[#122117] button'} rounded-3xl h-12 w-full px-10 shadow-md leading-6 font-bold hover:cursor-pointer`;
 
   if (href) {
     return (

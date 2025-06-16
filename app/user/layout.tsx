@@ -1,4 +1,4 @@
-import Sidebar from "@/app/ui/Sidebar";
+import Sidebar from "@/app/ui/display/Sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -6,7 +6,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full flex-none md:w-64">
         <Sidebar />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto bg-[#122117] text-white h-fit">{children}</div>
+      <div className="flex-grow p-6 md:overflow-y-auto bg-[#122117] text-white h-fit">
+        {children}
+      </div>
     </div>
   );
 }

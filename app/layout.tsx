@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Manrope } from 'next/font/google';
+import { Manrope } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navigation from "@/app/ui/Navigation";
-import Footer from "@/app/ui/Footer";
+import Navigation from "@/app/ui/display/Navigation";
+import Footer from "@/app/ui/display/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,17 +16,18 @@ const geistMono = Geist_Mono({
 });
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500', '600', '700'], // customize as needed
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"], // customize as needed
 });
 
 export const metadata: Metadata = {
   title: "Equiply",
-  description: "Equiply is a platform that connects farmers to nearby peers who own idle agricultural tools. It enables hyper-local, short-term peer-to-peer rentals of farm equipment—saving farmers time, labor, and money.",
+  description:
+    "Equiply is a platform that connects farmers to nearby peers who own idle agricultural tools. It enables hyper-local, short-term peer-to-peer rentals of farm equipment—saving farmers time, labor, and money.",
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
   },
 };
 
