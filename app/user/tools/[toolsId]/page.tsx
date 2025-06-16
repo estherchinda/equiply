@@ -3,6 +3,7 @@ import { tools } from "@/app/lib/tools";
 import Link from "next/link";
 import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
 import ContactComponent from "@/app/ui/ContactComponent";
+import HeadingComponent from "@/app/ui/HeadingComponent";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -58,12 +59,13 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
         {/* tool type  and description */}
         <div className="w-full">
           <h1 className="text-[22px] font-bold leading-7 mb-2.5">{tool.toolType}</h1>
+          {/* <HeadingComponent content={tool.toolType} /> */}
           <p className="leading-6 text-sm">{tool.description}</p>
         </div>
 
         {/* details */}
         <div className="w-full">
-          <h2 className="text-[22px] font-bold leading-7 mb-5">About this tool</h2>
+          <HeadingComponent content="About this tool" marginBottom="5" />
           {details.map((item) => (
             <TableRow key={item.label} label={item.label} value={item.value} />
           ))}
@@ -71,7 +73,7 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
 
         {/* pricing */}
         <div className="w-full">
-          <h2 className="text-[22px] font-bold leading-7 mb-5">Pricing</h2>
+          <HeadingComponent content="Pricing" marginBottom="5" />
           {pricing.map((item) => (
             <TableRow key={item.label} label={item.label} value={item.value} showNairaSign={true} />
           ))}
@@ -79,7 +81,7 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
 
         {/* owner */}
         <div className="w-full">
-          <h2 className="text-[22px] font-bold leading-7 mb-5">Owner</h2>
+          <HeadingComponent content="Owner" marginBottom="5" />
           <div className="flex items-center gap-4">
             <ProfileImageComponent />
             <div className="space-y-1">
