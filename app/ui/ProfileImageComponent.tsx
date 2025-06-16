@@ -9,7 +9,7 @@ export default function ProfileImageComponent () {
             alt="Profile picture"
             width={40}
             height={40}
-            className="w-full h-full object-cover rounded-full"
+            className="w-auto h-auto object-cover rounded-full"
             style={{'width': 'auto', 'height': 'auto'}}
           />
         </Link>

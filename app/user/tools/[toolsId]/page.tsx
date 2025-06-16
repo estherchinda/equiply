@@ -10,6 +10,11 @@ interface ToolDetailsProps {
   };
 }
 
+export async function generateStaticParams() {
+  return tools.map((tool) => ({
+    toolsId: tool.id,
+  }));
+}
 
 export default async function ToolDetails({ params }: ToolDetailsProps) {
   const { toolsId } = params;
