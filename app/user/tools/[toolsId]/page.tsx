@@ -5,9 +5,9 @@ import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
 import ContactComponent from "@/app/ui/ContactComponent";
 
 interface ToolDetailsProps {
-  params: {
+  params: Promise<{
     toolsId: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ToolDetails({ params }: ToolDetailsProps) {
-  const { toolsId } = params;
+  const { toolsId } = await params; // Await the params Promise
   const tool = tools.find((t) => t.id === toolsId);
 
   if (!tool) {
