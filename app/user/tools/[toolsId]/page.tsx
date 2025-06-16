@@ -1,22 +1,12 @@
-"use client";
-
 import TableRow from "@/app/ui/TableRow"; // adjust path if needed
 import { tools } from "@/app/lib/tools";
-import { useState, ChangeEvent } from "react";
 import Link from "next/link";
 import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
-import TextareaInput from "@/app/ui/forms/TextareaInput";
-import Button from "@/app/ui/forms/Button";
+import ContactComponent from "@/app/ui/ContactComponent";
 
-// todo: figure out how to maintain client side components and fetch data from api without warnings or errors
-export default function ToolDetails({ params }: { params: { toolsId: string } }) {
-  const tool = tools.find((t) => t.id === params.toolsId);
-
-  const [message, setMessage] = useState("");
-
-  const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-  }
+export default async function ToolDetails({ params }: { params: { toolsId: string } }) {
+  const { toolsId } = params;
+  const tool = tools.find((t) => t.id === toolsId);
 
   if (!tool) {
     return <div className="h-screen flex justify-center items-center">Tool not found</div>;
@@ -88,17 +78,7 @@ export default function ToolDetails({ params }: { params: { toolsId: string } })
         </div>
 
         {/* contact owner */}
-        <div className="w-full">
-          <h2 className="text-[22px] font-bold leading-7 mb-5">Contact</h2>
-          <div className="w-full md:w-[448px]">
-            <TextareaInput value={message} onChange={handleMessageChange} />
-          </div>
-          <div className="flex justify-end w-full mt-3">
-            <div className="w-full md:w-[200px]">
-                <Button content="Send message" />
-            </div>
-          </div>
-        </div>
+        <ContactComponent />
 
       </div>
     </section>
