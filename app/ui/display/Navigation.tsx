@@ -24,8 +24,8 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex justify-between items-center border-b border-[#E5E8EB]">
-      <Link href={"/"}>
+    <nav className={`h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex ${pathname.startsWith("/user") ?'justify-end' : 'justify-between'} items-center border-b border-[#E5E8EB]`}>
+      {!pathname.startsWith('/user') && <Link href={"/"}>
         <Image
           src={"/logo.svg"}
           alt="Equiply 2025."
@@ -34,7 +34,7 @@ export default function Navigation() {
           style={{ width: "auto", height: "auto" }}
           priority
         />
-      </Link>
+      </Link>}
 
       {pathname.startsWith("/user") ? (
         <div className="hidden md:flex gap-3">

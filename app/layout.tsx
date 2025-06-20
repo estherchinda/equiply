@@ -4,6 +4,7 @@ import { Manrope } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/app/ui/display/Navigation";
 import Footer from "@/app/ui/display/Footer";
+import { SidebarProvider } from "@/app/context/SidebarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.className} antialiased`}
       >
-        <Navigation />
-        {children}
-        <Footer />
+        <SidebarProvider>
+          <Navigation />
+          {children}
+          <Footer />
+        </SidebarProvider>
       </body>
     </html>
   );
