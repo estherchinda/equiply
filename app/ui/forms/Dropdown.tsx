@@ -7,9 +7,10 @@ type DropdownProps = {
   options: string[];
   selected: string;
   onSelect: (option: string) => void;
+  width: string;
 };
 
-export default function Dropdown({ options, selected, onSelect }: DropdownProps) {
+export default function Dropdown({ options, selected, onSelect, width }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +29,7 @@ export default function Dropdown({ options, selected, onSelect }: DropdownProps)
   return (
     <div className="relative w-fit" ref={dropdownRef}>
       <button
-        className="h-8 px-3 py-1.5 bg-[#264533] rounded-2xl text-white text-sm flex items-center gap-2 cursor-pointer"
+        className={`h-8 px-3 py-1.5 bg-[#264533] rounded-2xl text-white text-sm flex justify-between items-center gap-2 cursor-pointer w-${width}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="font-medium">{selected}</span>

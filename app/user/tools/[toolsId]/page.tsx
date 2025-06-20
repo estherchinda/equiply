@@ -17,6 +17,16 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: ToolDetailsProps) {
+  const { toolsId } = await params; // Await the params Promise
+  const tool = tools.find((t) => t.id === toolsId);
+
+  return {
+    title: `${tool?.toolType} - Equiply`,
+    description: tool?.description,
+  };
+}
+
 export default async function ToolDetails({ params }: ToolDetailsProps) {
   const { toolsId } = await params; // Await the params Promise
   const tool = tools.find((t) => t.id === toolsId);

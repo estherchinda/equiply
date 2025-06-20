@@ -2,6 +2,11 @@ import Button from "@/app/ui/forms/Button";
 import Heading from "@/app/ui/display/HeadingComponent";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Profile - Equiply",
+  description: "View your profile and monitor activities in  your account",
+}
+
 export default function ProfilePage() {
   return (
     <section className="py-3 md:mx-10">

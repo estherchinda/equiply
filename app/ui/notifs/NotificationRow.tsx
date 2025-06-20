@@ -59,7 +59,7 @@ export default function NotificationRow({
         onClick={handleModalOpen}
         className={`w-full h-[72px] flex items-center justify-start md:p-4 gap-4 hover:cursor-pointer my-2 rounded-2xl`}
       >
-        <div className="bg-[#264533] h-8 w-8 md:h-12 md:w-12 rounded-lg flex justify-center items-center text-white text-sm md:text-xl relative">
+        <div className="bg-[#264533] h-10 w-10 md:h-12 md:w-12 rounded-lg flex justify-center items-center text-white text-lg md:text-xl relative">
           <Icon />
           {status === "unread" && (
             <span className="h-2.5 w-2.5 rounded-full bg-red-500 absolute -top-0.5 -right-0.5"></span>
