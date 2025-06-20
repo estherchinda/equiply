@@ -1,9 +1,9 @@
-import TableRow from "@/app/ui/TableRow"; // adjust path if needed
+import TableRow from "@/app/ui/tools/TableRow"; // adjust path if needed
 import { tools } from "@/app/lib/tools";
 import Link from "next/link";
-import ProfileImageComponent from "@/app/ui/ProfileImageComponent";
-import ContactComponent from "@/app/ui/ContactComponent";
-import HeadingComponent from "@/app/ui/HeadingComponent";
+import ProfileImageComponent from "@/app/ui/display/ProfileImageComponent";
+import ContactComponent from "@/app/ui/tools/ContactComponent";
+import HeadingComponent from "@/app/ui/display/HeadingComponent";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -17,12 +17,26 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: ToolDetailsProps) {
+  const { toolsId } = await params; // Await the params Promise
+  const tool = tools.find((t) => t.id === toolsId);
+
+  return {
+    title: `${tool?.toolType} - Equiply`,
+    description: tool?.description,
+  };
+}
+
 export default async function ToolDetails({ params }: ToolDetailsProps) {
   const { toolsId } = await params; // Await the params Promise
   const tool = tools.find((t) => t.id === toolsId);
 
   if (!tool) {
-    return <div className="h-screen flex justify-center items-center">Tool not found</div>;
+    return (
+      <div className="h-screen flex justify-center items-center">
+        Tool not found
+      </div>
+    );
   }
 
   const details = [
@@ -39,16 +53,18 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
   ];
 
   const pricing = [
-    {label: 'Daily rate', value: tool.pricing.dailyRate},
-    {label: 'Weekly rate', value: tool.pricing.weeklyRate},
-    {label: 'Monthly rate', value: tool.pricing.monthlyRate},
-    {label: 'Security deposit', value: tool.pricing.secureDeposit},
+    { label: "Daily rate", value: tool.pricing.dailyRate },
+    { label: "Weekly rate", value: tool.pricing.weeklyRate },
+    { label: "Monthly rate", value: tool.pricing.monthlyRate },
+    { label: "Security deposit", value: tool.pricing.secureDeposit },
   ];
 
   return (
     <section className="h-full md:mx-8">
       <p className="text-sm font-medium leading-6 space-x-2">
-        <Link href="/user/tools" className="text-[#94C7A8]">Tools</Link>
+        <Link href="/user/tools" className="text-[#94C7A8]">
+          Tools
+        </Link>
         <span className="text-[#94C7A8]">/</span>
         <span>{tool.toolType}</span>
       </p>
@@ -58,7 +74,9 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
 
         {/* tool type  and description */}
         <div className="w-full">
-          <h1 className="text-[22px] font-bold leading-7 mb-2.5">{tool.toolType}</h1>
+          <h1 className="text-[22px] font-bold leading-7 mb-2.5">
+            {tool.toolType}
+          </h1>
           {/* <HeadingComponent content={tool.toolType} /> */}
           <p className="leading-6 text-sm">{tool.description}</p>
         </div>
@@ -75,7 +93,12 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
         <div className="w-full">
           <HeadingComponent content="Pricing" marginBottom="5" />
           {pricing.map((item) => (
-            <TableRow key={item.label} label={item.label} value={item.value} showNairaSign={true} />
+            <TableRow
+              key={item.label}
+              label={item.label}
+              value={item.value}
+              showNairaSign={true}
+            />
           ))}
         </div>
 
@@ -85,15 +108,14 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
           <div className="flex items-center gap-4">
             <ProfileImageComponent />
             <div className="space-y-1">
-                <h4 className="text-sm font-medium leading-6">Ethan Carter</h4>
-                <p className="text-xs leading-5 text-[#94C7A8]">Joined 2021</p>
+              <h4 className="text-sm font-medium leading-6">Ethan Carter</h4>
+              <p className="text-xs leading-5 text-[#94C7A8]">Joined 2021</p>
             </div>
           </div>
         </div>
 
         {/* contact owner */}
         <ContactComponent />
-
       </div>
     </section>
   );

@@ -1,6 +1,11 @@
 import { tools } from "@/app/lib/tools";
-import Tag from "@/app/ui/Tag";
+import Tag from "@/app/ui/display/Tag";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Listings - Equiply",
+  description: "View your active listings and track their statuses",
+}
 
 export default function Listings() {
   return (

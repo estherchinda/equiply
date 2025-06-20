@@ -11,8 +11,9 @@ import {
   RiNotification2Fill,
   RiUser6Line,
   RiUser6Fill,
+  RiTeamLine,
+  RiTeamFill,
 } from "react-icons/ri";
-
 
 export const navigations = [
     {
@@ -56,5 +57,12 @@ export const navigations = [
       icon: RiNotification2Line,
       iconActive: RiNotification2Fill,
       hasUnread: true,
+    },
+    {
+      name: "Community",
+      href: "/user/community",
+      icon: RiTeamLine,
+      iconActive: RiTeamFill,
+      hasUnread: false,
     },
   ];

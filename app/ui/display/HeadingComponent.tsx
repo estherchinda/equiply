@@ -4,5 +4,5 @@ type HeadingProps = {
 }
 
 export default function Heading ({content, marginBottom = '2.5'}: HeadingProps) {
-    return <h1 className={`text-[22px] font-bold leading-7 mb-${marginBottom}`}>{content}</h1>
+    return <h1 className={`text-[22px] font-bold leading-7 whitespace-nowrap mb-3 mb-${marginBottom}`}>{content}</h1>
 }
