@@ -35,18 +35,18 @@ export default function Sidebar() {
     md:translate-x-0
     ${collapsed ? "md:w-20" : "md:w-64"} 
     w-64
-    flex flex-col justify-between px-4 py-6
+    flex flex-col gap-10 px-4 py-6
   `}
       >
         {/* Header */}
         <div
           className={`flex ${
-            collapsed ? "flex-col-reverse" : "flex-row"
+            collapsed ? "flex-col-reverse gap-4 w-[30px]" : "flex-row"
           } justify-between items-center`}
         >
-          <Link href={"/profile"} className="flex items-center mt-2.5">
+          <Link href={"/user/profile"} className="flex items-center mt-2.5">
             <Image
-              src={collapsed ? "/favicon.png" : "/logo.svg"}
+              src={collapsed ? "/favicon.svg" : "/logo.svg"}
               alt="Equiply 2025."
               width={collapsed ? 20 : 250}
               height={collapsed ? 20 : 250}
@@ -56,7 +56,7 @@ export default function Sidebar() {
           </Link>
           <button
             onClick={toggleCollapse}
-            className="text-white text-2xl transition-all"
+            className="text-white text-[21px] h-10 w-10 hover:bg-[#264533] transition-all flex justify-center items-center rounded-full hover:cursor-pointer"
           >
             <Icon />
           </button>
@@ -109,7 +109,7 @@ export default function Sidebar() {
         </section>
 
         {/* Footer */}
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center self-end mt-28">
           <a
             href="https://www.linkedin.com/in/air-str/"
             target="_blank"
