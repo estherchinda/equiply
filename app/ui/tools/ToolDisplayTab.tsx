@@ -15,12 +15,12 @@ export default function ToolTab({
     return (
         <div className="space-y-2 hover:cursor-pointer relative group animate-pulse">
             {/* image */}
-            <div className="h-[100px] w-full md:w-[170px] rounded-[12px] bg-[#264533]">
+            <div className="h-[100px] w-full rounded-[12px] bg-[#264533]">
                 {/* <Image src={tool.image} alt={tool.toolType} height={100} width={170} style={{height: "auto", width: "auto"}} /> */}
                 {/* link to details */}
                 <Link
                 href={href}
-                className="absolute top-0 hidden group-hover:block h-[100px] w-full md:w-[170px] rounded-[12px] text-center justify-center"
+                className="absolute top-0 hidden group-hover:block h-[100px] w-full rounded-[12px] text-center justify-center"
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
                 >
                     <p className="flex justify-center items-center h-full w-full text-sm">See more</p>

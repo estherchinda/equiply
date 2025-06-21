@@ -20,9 +20,10 @@ export default function Navigation() {
     setQuery(e.target.value);
   };
 
+  const website = pathname.startsWith("/user");
   return (
-    <nav className={`h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex ${pathname.startsWith("/user") ?'justify-end' : 'justify-between'} items-center border-b border-[#E5E8EB]`}>
-      {!pathname.startsWith('/user') && <Link href={"/"}>
+    <nav className={`h-[65px] w-full pr-7 md:px-10 py-3 bg-[#122117] flex ${website ?'justify-end' : 'justify-between'} items-center border-b border-[#E5E8EB]`}>
+      {!website && <Link href={"/"}>
         <Image
           src={"/logo.svg"}
           alt="Equiply 2025."
@@ -33,7 +34,7 @@ export default function Navigation() {
         />
       </Link>}
 
-      {pathname.startsWith("/user") ? (
+      {website ? (
         <div className="hidden md:flex gap-3">
           <SearchInput value={query} onChange={handleSearch} />
           <div>
@@ -53,7 +54,7 @@ export default function Navigation() {
         </ul>
       )}
 
-      <div className="md:hidden flex items-center gap-3 ml-3">
+      {website && <div className="md:hidden flex items-center gap-3 ml-3">
         <RiMenu2Fill
           onClick={openMobile}
           className="text-white text-3xl hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300 sticky top-0"
@@ -62,7 +63,7 @@ export default function Navigation() {
         <div>
           <ProfileImageComponent />
         </div>
-      </div>
+      </div>}
     </nav>
   );
 }
