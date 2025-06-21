@@ -1,9 +1,9 @@
-import TableRow from "@/app/ui/tools/TableRow"; // adjust path if needed
-import { tools } from "@/app/lib/tools";
+import TableRow from "@/ui/tools/TableRow"; // adjust path if needed
+import { tools } from "@/lib/tools";
 import Link from "next/link";
-import ProfileImageComponent from "@/app/ui/display/ProfileImageComponent";
-import ContactComponent from "@/app/ui/tools/ContactComponent";
-import HeadingComponent from "@/app/ui/display/HeadingComponent";
+import ProfileImageComponent from "@/ui/display/ProfileImageComponent";
+import ContactComponent from "@/ui/tools/ContactComponent";
+import HeadingComponent from "@/ui/display/HeadingComponent";
 
 interface ToolDetailsProps {
   params: Promise<{

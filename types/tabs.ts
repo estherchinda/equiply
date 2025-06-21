@@ -26,8 +26,8 @@ export const tabsList = [
         id: 4,
         tabName: "History",
     },
-    {
-        id: 5,
-        tabName: "Settings",
-    },
+    // {
+    //     id: 5,
+    //     tabName: "Settings",
+    // },
 ]

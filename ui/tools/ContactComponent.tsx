@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, ChangeEvent } from "react";
-import TextareaInput from "@/app/ui/forms/TextareaInput";
-import HeadingComponent from "@/app/ui/display/HeadingComponent";
-import Button from "@/app/ui/forms/Button";
+import TextareaInput from "@/ui/forms/TextareaInput";
+import HeadingComponent from "@/ui/display/HeadingComponent";
+import Button from "@/ui/forms/Button";
 
 export default function ContactComponent() {
   const [message, setMessage] = useState("");

@@ -1,7 +1,7 @@
 "use client";
 
-import EmailInput from "@/app/ui/forms/EmailInput";
-import Button from "@/app/ui/forms/Button";
+import EmailInput from "@/ui/forms/EmailInput";
+import Button from "@/ui/forms/Button";
 import Link from "next/link";
 
 import { useState, ChangeEvent } from "react";

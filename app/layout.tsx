@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navigation from "@/app/ui/display/Navigation";
-import Footer from "@/app/ui/display/Footer";
-import { SidebarProvider } from "@/app/context/SidebarContext";
+import Navigation from "@/ui/display/Navigation";
+import Footer from "@/ui/display/Footer";
+import { SidebarProvider } from "@/context/SidebarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { navigations } from "../../lib/sidebar";
 import { notifications } from "../../types/notifications";
 import { RiArrowRightWideLine, RiArrowLeftWideLine } from "react-icons/ri";
-import { useSidebar } from "@/app/context/SidebarContext";
+import { useSidebar } from "@/context/SidebarContext";
 
 export default function Sidebar() {
   const { collapsed, toggleCollapse, mobileOpen, closeMobile } = useSidebar();

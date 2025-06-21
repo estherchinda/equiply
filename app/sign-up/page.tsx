@@ -1,9 +1,9 @@
 "use client";
 
-import EmailInput from "@/app/ui/forms/EmailInput";
-import PasswordInput from "@/app/ui/forms/PasswordInput";
-import Input from "@/app/ui/forms/Input";
-import Button from "@/app/ui/forms/Button";
+import EmailInput from "@/ui/forms/EmailInput";
+import PasswordInput from "@/ui/forms/PasswordInput";
+import Input from "@/ui/forms/Input";
+import Button from "@/ui/forms/Button";
 import Link from "next/link";
 
 import { useState, ChangeEvent } from "react";

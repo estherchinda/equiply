@@ -13,7 +13,7 @@ import { IconType } from "react-icons";
 import type {
   NotificationStatus,
   NotificationType,
-} from "@/app/types/notifications";
+} from "@/types/notifications";
 import Modal from "../display/Modal";
 
 type RowProps = {

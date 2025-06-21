@@ -1,27 +1,13 @@
-import Heading from "@/app/ui/display/HeadingComponent";
-import { tools } from "@/app/lib/tools";
-import { reviews } from "@/app/lib/reviews";
-import ToolTab from "@/app/ui/tools/ToolDisplayTab";
-import ReviewsRow from "@/app/ui/profile/ReviewsRowComponent";
-import Table from "@/app/ui/display/TableComponent";
+import { tools } from "@/lib/tools";
+import { reviews } from "@/lib/reviews";
+// import Link from "next/link";
+import ToolTab from "@/ui/tools/ToolDisplayTab";
+import Heading from "@/ui/display/HeadingComponent";
+import ReviewsRow from "@/ui/profile/ReviewsRowComponent";
+import Table from "@/ui/display/TableComponent";
+import { headers, data } from "@/lib/rental-history";
 
 export default function All() {
-    const headers = ['Equipment', 'Date', 'Duration', 'Status'];
-
-    const data = [
-        {
-        equipment: 'Tractor',
-        date: '2023-08-15',
-        duration: '7 days',
-        status: 'Completed',
-        },
-        {
-        equipment: 'Plow',
-        date: '2023-07-20',
-        duration: '3 days',
-        status: 'Completed',
-        },
-    ];
 
   return (
     <section className="mt-10 space-y-10">
@@ -42,7 +28,10 @@ export default function All() {
 
       {/* reviews */}
       <div className="space-y-8">
-        <Heading content="Reviews" marginBottom="5" />
+        <div className="flex justify-between items-center">
+          <Heading content="Reviews" marginBottom="5" />
+          {/* <Link href={""} className="text-sm underline text-[#94C7A8]">See all</Link> */}
+        </div>
         {reviews.slice(0, 2).map((review) => (
           <ReviewsRow
             key={review.id}
@@ -59,7 +48,7 @@ export default function All() {
       <div className="space-y-5">
         <Heading content="Rental History" marginBottom="5" />
         <div className="md:w-[85%]">
-            <Table headers={headers} rows={data} />
+          <Table headers={headers} rows={data} rowsPerPage={2} />
         </div>
       </div>
     </section>

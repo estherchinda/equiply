@@ -1,7 +1,7 @@
 "use client";
 
-import Sidebar from "@/app/ui/display/Sidebar";
-import { useSidebar } from "../context/SidebarContext";
+import Sidebar from "@/ui/display/Sidebar";
+import { useSidebar } from "../../context/SidebarContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { collapsed } = useSidebar();

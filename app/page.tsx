@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/app/ui/forms/Button";
+import Button from "@/ui/forms/Button";
 
 export default function Home() {
   // Cards data

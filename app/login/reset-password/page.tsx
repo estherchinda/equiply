@@ -1,7 +1,7 @@
 "use client";
 
-import PasswordInput from "@/app/ui/forms/PasswordInput";
-import Button from "@/app/ui/forms/Button";
+import PasswordInput from "@/ui/forms/PasswordInput";
+import Button from "@/ui/forms/Button";
 
 import { useState, ChangeEvent } from "react";
 

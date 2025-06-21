@@ -12,10 +12,10 @@ type TableRow = {
 type TableProps = {
   headers: string[];
   rows: TableRow[];
+  rowsPerPage?: number
 };
 
-export default function Table({ headers, rows }: TableProps) {
-  const rowsPerPage = 10;
+export default function Table({ headers, rows, rowsPerPage = 10 }: TableProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(rows.length / rowsPerPage);
@@ -43,7 +43,7 @@ export default function Table({ headers, rows }: TableProps) {
               <td className="py-4 px-4 text-[#94C7A8] whitespace-nowrap">{row.date}</td>
               <td className="py-4 px-4 text-[#94C7A8] whitespace-nowrap">{row.duration}</td>
               <td className="py-4 px-4">
-                <span className="px-4 py-1 rounded-full bg-[#1F3529] text-[#94C7A8] text-sm font-medium whitespace-nowrap">
+                <span className={`${row.status === "Completed" ? "bg-[#1F3529] text-[#94C7A8]" : "bg-[#524d28] text-white"} px-4 py-1 rounded-full text-sm font-medium whitespace-nowrap`}>
                   {row.status}
                 </span>
               </td>
@@ -53,7 +53,7 @@ export default function Table({ headers, rows }: TableProps) {
       </table>
 
       {/* Pagination controls */}
-      {rows.length > rowsPerPage && (
+      {rows.length > rowsPerPage || rowsPerPage > 2 && (
         <div className="flex justify-center items-center gap-4 py-4">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
