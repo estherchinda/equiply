@@ -1,19 +1,20 @@
+import Link from "next/link";
+
 type TabComponentProps = {
     tabName: string;
-    activeTab: number;
-    index: number;
-    changeTab: () => void;
+    href: string;
+    pathname: string;
 }
 
 export default function TabComponent({
     tabName, 
-    activeTab, 
-    index, 
-    changeTab
+    href,
+    pathname,
 }: TabComponentProps) {
+    const isActive = pathname === href;
     return (
-        <div onClick={changeTab} className={`${activeTab === index ? "border-b-2 border-white" : ""} hover:cursor-pointer hover:text-[#1A352A]`}>
-            <span className={`${activeTab === index ? 'text-white' : 'text-[#94C7A8]'} text-sm`}>{ tabName }</span>
+        <div className={`${isActive ? "border-b-2 border-white" : ""} hover:cursor-pointer hover:text-[#1A352A]`}>
+            <Link href={href} className={`${isActive ? 'text-white' : 'text-[#94C7A8]'} text-sm`}>{ tabName }</Link>
         </div>
     )
 }

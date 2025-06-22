@@ -1,14 +1,17 @@
 import { tools } from "@/lib/tools";
 import { reviews } from "@/lib/reviews";
-// import Link from "next/link";
 import ToolTab from "@/ui/tools/ToolDisplayTab";
 import Heading from "@/ui/display/HeadingComponent";
 import ReviewsRow from "@/ui/profile/ReviewsRowComponent";
 import Table from "@/ui/display/TableComponent";
 import { headers, data } from "@/lib/rental-history";
 
-export default function All() {
+export const metadata = {
+  title: "Profile - Equiply",
+  description: "View your profile and monitor activities in  your account",
+};
 
+export default function AllTabs() {
   return (
     <section className="mt-10 space-y-10">
       {/* available equipments */}

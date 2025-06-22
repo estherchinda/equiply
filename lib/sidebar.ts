@@ -25,7 +25,7 @@ export const navigations = [
     },
     {
       name: "Profile",
-      href: "/user/profile",
+      href: "/user/profile/all",
       icon: RiUser6Line,
       iconActive: RiUser6Fill,
       hasUnread: false,

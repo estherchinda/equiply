@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProfileImageComponent () {
     return (
-        <Link href={"/user/profile"} className="h-[40px] w-[40px] rounded-full overflow-hidden">
+        <Link href={"/user/profile/all"} className="h-[40px] w-[40px] rounded-full overflow-hidden">
           <Image
             src="/pfp.jpeg"
             alt="Profile picture"

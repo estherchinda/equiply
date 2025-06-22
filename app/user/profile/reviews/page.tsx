@@ -1,5 +1,5 @@
 import Heading from "@/ui/display/HeadingComponent";
-import ReviewsRow from "./ReviewsRowComponent";
+import ReviewsRow from "@/ui/profile/ReviewsRowComponent";
 import { reviews } from "@/lib/reviews";
 
 export default function Reviews() {

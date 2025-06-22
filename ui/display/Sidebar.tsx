@@ -44,7 +44,7 @@ export default function Sidebar() {
             collapsed ? "flex-col-reverse gap-4 w-[30px]" : "flex-row"
           } justify-between items-center`}
         >
-          <Link href={"/user/profile"} className="flex items-center mt-2.5">
+          <Link href={"/user/profile/all"} className="flex items-center mt-2.5">
             <Image
               src={collapsed ? "/favicon.svg" : "/logo.svg"}
               alt="Equiply 2025."

@@ -2,7 +2,7 @@ import { tools } from "@/lib/tools";
 import Heading from "@/ui/display/HeadingComponent";
 import ToolTab from "@/ui/tools/ToolDisplayTab";
 
-export default function AvailableEquipments() {
+export default function Equipments() {
   return (
     <div className="my-10">
       <Heading content="Available Equipments" marginBottom="5" />
