@@ -17,6 +17,7 @@ import type {
 import Modal from "../display/Modal";
 
 type RowProps = {
+  id: string;
   message: string;
   time: string;
   type: NotificationType;
@@ -34,6 +35,7 @@ const typeIcons: Record<NotificationType, IconType> = {
 };
 
 export default function NotificationRow({
+  id,
   message,
   time,
   type,

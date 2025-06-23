@@ -24,7 +24,7 @@ export const notifications = [
     time: "08:00 AM",
     type: "reminder",
     status: "unread",
-    date: "2025-06-16",
+    date: "2025-06-23",
   },
   {
     id: "2",

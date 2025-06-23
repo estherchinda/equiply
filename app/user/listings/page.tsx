@@ -1,6 +1,7 @@
 import { tools } from "@/lib/tools";
 import Tag from "@/ui/display/Tag";
 import Link from "next/link";
+import Heading from "@/ui/display/HeadingComponent";
 
 export const metadata = {
   title: "Listings - Equiply",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function Listings() {
   return (
     <section className="py-3 md:mx-10">
-      <h2 className="text-[32px] font-bold leading-10 ">Your tools</h2>
+      <Heading content="Your listed tools" />
 
       {/* tools */}
       <section className="space-y-1">
