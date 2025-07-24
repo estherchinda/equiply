@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"], // customize as needed
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

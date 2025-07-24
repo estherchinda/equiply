@@ -46,7 +46,7 @@ export default function Sidebar() {
         >
           <Link href={"/user/profile/all"} className="flex items-center mt-2.5">
             <Image
-              src={collapsed ? "/favicon.svg" : "/logo.svg"}
+              src={collapsed ? "/favicon.svg" : "/equiply-logo.png"}
               alt="Equiply 2025."
               width={collapsed ? 20 : 250}
               height={collapsed ? 20 : 250}

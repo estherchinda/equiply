@@ -17,7 +17,6 @@ import type {
 import Modal from "../display/Modal";
 
 type RowProps = {
-  id: string;
   message: string;
   time: string;
   type: NotificationType;
@@ -35,7 +34,6 @@ const typeIcons: Record<NotificationType, IconType> = {
 };
 
 export default function NotificationRow({
-  id,
   message,
   time,
   type,
@@ -61,7 +59,9 @@ export default function NotificationRow({
         onClick={handleModalOpen}
         className={`w-full h-[72px] flex items-center justify-start md:p-4 gap-4 hover:cursor-pointer my-2 rounded-2xl`}
       >
-        <div className="bg-[#264533] h-10 w-10 md:h-12 md:w-12 rounded-lg flex justify-center items-center text-white text-lg md:text-xl relative">
+        <div
+          className="bg-[#264533] h-10 w-10 md:h-12 md:w-12 rounded-lg flex justify-center items-center text-white text-lg md:text-xl relative"
+        >
           <Icon />
           {status === "unread" && (
             <span className="h-2.5 w-2.5 rounded-full bg-red-500 absolute -top-0.5 -right-0.5"></span>
@@ -69,7 +69,9 @@ export default function NotificationRow({
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-medium leading-6 truncate ">{message}</h3>
-          <p className="text-xs md:text-sm font-normal text-[#94C7A8] leading-5">
+          <p
+            className="text-xs md:text-sm font-normal text-[#94C7A8] leading-5"
+          >
             {time}
           </p>
         </div>

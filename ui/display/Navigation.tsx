@@ -10,7 +10,7 @@ import ProfileImageComponent from "@/ui/display/ProfileImageComponent";
 import { useSidebar } from "@/context/SidebarContext";
 
 export default function Navigation() {
-  const links = ["About", "How it works", "Contact"];
+  const links = ["About", "How it works", "Pricing"];
   const pathname = usePathname();
   const { openMobile } = useSidebar();
 
@@ -27,12 +27,12 @@ export default function Navigation() {
       } items-center border-b border-[#E5E8EB]`}
     >
       {!website && (
-        <Link href={"/"}>
+        <Link href={"/"} className="">
           <Image
-            src={"/logo.svg"}
+            src={"/equiply-logo.png"}
             alt="Equiply 2025."
-            width={200}
-            height={200}
+            width={120}
+            height={120}
             style={{ width: "auto", height: "auto" }}
             priority
           />

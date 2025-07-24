@@ -1,8 +1,8 @@
 import {
   RiToolsLine,
   RiToolsFill,
-  RiCalendar2Line,
-  RiCalendarFill,
+  // RiCalendar2Line,
+  // RiCalendarFill,
   RiListIndefinite,
   RiListCheck3,
   RiMessage3Line,
@@ -30,13 +30,13 @@ export const navigations = [
       iconActive: RiUser6Fill,
       hasUnread: false,
     },
-    {
-      name: "Rentals",
-      href: "/user/rentals",
-      icon: RiCalendar2Line,
-      iconActive: RiCalendarFill,
-      hasUnread: false,
-    },
+    // {
+    //   name: "Rentals",
+    //   href: "/user/rentals",
+    //   icon: RiCalendar2Line,
+    //   iconActive: RiCalendarFill,
+    //   hasUnread: false,
+    // },
     {
       name: "Listings",
       href: "/user/listings",
@@ -46,7 +46,7 @@ export const navigations = [
     },
     {
       name: "Messages",
-      href: "/user/messages",
+      href: "/user/messages/chat", //actually "chats"
       icon: RiMessage3Line,
       iconActive: RiMessage3Fill,
       hasUnread: false,
