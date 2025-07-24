@@ -12,7 +12,7 @@ export default function LandingCard({
     content,
 }: LandingCardProps) {
     return (
-        <div className="bg-[#1C3324] border border-[#366347] rounded-[8px] h-fit md:h-[150px] w-full p-4 space-y-2">
+        <div className="bg-[#1C3324] border border-[#366347] rounded-[8px] h-fit md:h-[169px] w-full p-4 space-y-2">
           <Image src={img} alt="Icon" height={25} width={25} />
           <h3 className="text-base font-bold leading-5">
             {title}
