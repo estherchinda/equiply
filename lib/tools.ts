@@ -1,8 +1,31 @@
 export const tools = [
   {
-    id: "1",
+   id: "1",
+   toolType: "Drone",
+   images: ["/tools/drone.jpg", "https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
+   description:
+     "Professional agricultural drone with crop monitoring capabilities. Features multispectral imaging, precision spraying system, and GPS-guided autonomous flight for field mapping and targeted treatments.",
+   make: "DJI",
+   model: "Agras T40",
+   year: 2023,
+   horsepower: null,
+   fuelType: "Electric",
+   transmission: "Digital Flight Control",
+   drivetype: "Aerial",
+   condition: "Excellent",
+   availability: "Available",
+   pricing: {
+     dailyRate: 250,
+     weeklyRate: 1400,
+     monthlyRate: 4800,
+     secureDeposit: 1200,
+   },
+   distance: 28, // Distance in miles for local rentals
+},
+  {
+    id: "2",
     toolType: "Tractor",
-    image: "/pfp.jpeg",
+    images: ["/tools/tractor.svg", "https://picsum.photos/200/300"],
     description:
       "This tractor is a versatile and powerful machine, perfect for a variety of farming tasks. It features a robust engine, comfortable seating, and intuitive controls, making it easy to operate even for long hours. The tractor is well-maintained and ready to work, ensuring reliable performance on your farm.",
     make: "John Deere",
@@ -23,9 +46,9 @@ export const tools = [
     distance: 2, // Distance in miles for local rentals
   },
   {
-    id: "2",
+    id: "3",
     toolType: "Plough",
-    image: "/pfp.jpeg",
+    images: ["/tools/plow.svg", "https://picsum.photos/200/300"],
     description:
       "Heavy-duty reversible plough ideal for breaking up tough soil and preparing the land for planting. Works well with medium to large tractors and ensures efficient tillage.",
     make: "Land Pride",
@@ -46,9 +69,9 @@ export const tools = [
     distance: 10, // Distance in miles for local rentals
   },
   {
-    id: "3",
+    id: "4",
     toolType: "Combine Harvester",
-    image: "/pfp.jpeg",
+    images: ["/tools/harvester.svg", "https://picsum.photos/200/300"],
     description:
       "This combine harvester offers excellent grain quality and low fuel consumption. Equipped with GPS guidance and auto-steer for efficient and stress-free harvesting.",
     make: "Case IH",
@@ -69,9 +92,9 @@ export const tools = [
     distance: 80, // Distance in miles for local rentals
   },
   {
-    id: "4",
+    id: "5",
     toolType: "Sprayer",
-    image: "/pfp.jpeg",
+    images: ["/tools/sprayer.svg", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
     description:
       "High-capacity mounted sprayer suitable for large-scale pesticide and fertilizer application. Features include a durable boom, adjustable nozzles, and a corrosion-resistant tank.",
     make: "Hardi",
@@ -92,9 +115,9 @@ export const tools = [
     distance: 15, // Distance in miles for local rentals
   },
   {
-    id: "5",
-    toolType: "Rotavator",
-    image: "/pfp.jpeg",
+    id: "6",
+    toolType: "Manure Spreader",
+    images: ["/tools/manure-spreader.svg", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
     description:
       "Efficient rotary tiller perfect for seedbed preparation and weed control. Lightweight yet powerful, suitable for tractors with lower horsepower.",
     make: "Shaktiman",
@@ -115,9 +138,9 @@ export const tools = [
     distance: 32, // Distance in miles for local rentals
   },
   {
-    id: "6",
+    id: "7",
     toolType: "Baler",
-    image: "/pfp.jpeg",
+    images: ["/tools/balers.svg", "https://picsum.photos/200/300"],
     description:
       "Round baler designed for quick, dense baling of hay and straw. Easy to attach and operate, ensures high output with minimal manpower.",
     make: "New Holland",
@@ -138,9 +161,9 @@ export const tools = [
     distance: 7, // Distance in miles for local rentals
   },
   {
-    id: "7",
+    id: "8",
     toolType: "Seeder",
-    image: "/pfp.jpeg",
+    images: ["/tools/seeder.svg", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
     description:
       "Precision seed drill for uniform seed placement and reduced wastage. Enhances crop emergence and ensures optimal row spacing for increased yield.",
     make: "John Deere",
@@ -161,9 +184,9 @@ export const tools = [
     distance: 19, // Distance in miles for local rentals
   },
   {
-    id: "8",
-    toolType: "Irrigation Pump",
-    image: "/pfp.jpeg",
+    id: "9",
+    toolType: "Forage Harvester",
+    images: ["/tools/forage-harvester.svg", "https://picsum.photos/200/300"],
     description:
       "High-pressure diesel-powered irrigation pump ideal for large farmlands. Delivers consistent water flow and is easy to transport.",
     make: "Honda",
@@ -184,9 +207,9 @@ export const tools = [
     distance: 10, // Distance in miles for local rentals
   },
   {
-    id: "9",
-    toolType: "Disc Harrow",
-    image: "/pfp.jpeg",
+    id: "10",
+    toolType: "Grain Cart",
+    images: ["/tools/grain-cart.svg", "https://picsum.photos/200/300"],
     description:
       "Heavy-duty disc harrow built for land leveling and breaking up tough clods. Durable steel frame and easily adjustable cutting angles.",
     make: "Mahindra",
@@ -207,9 +230,9 @@ export const tools = [
     distance: 20, // Distance in miles for local rentals
   },
   {
-    id: "10",
-    toolType: "Power Tiller",
-    image: "/pfp.jpeg",
+    id: "11",
+    toolType: "Auger",
+    images: ["/tools/auger.svg", "https://picsum.photos/200/300"],
     description:
       "Compact and fuel-efficient power tiller suited for small to mid-sized farms. Features ergonomic controls and superior soil pulverizing capacity.",
     make: "Kubota",
@@ -230,9 +253,9 @@ export const tools = [
     distance: 20, // Distance in miles for local rentals
   },
   {
-    id: "11",
-    toolType: "Manure Spreader",
-    image: "/pfp.jpeg",
+    id: "12",
+    toolType: "Cultivator",
+    images: ["/tools/cultivator.svg", "https://picsum.photos/200/300"],
     description:
       "Efficient PTO-driven manure spreader with even distribution and corrosion-resistant build. Ideal for organic farms and large-scale composting.",
     make: "Frontier",
@@ -253,9 +276,9 @@ export const tools = [
     distance: 80, // Distance in miles for local rentals
   },
   {
-    id: "12",
-    toolType: "Grain Dryer",
-    image: "/pfp.jpeg",
+    id: "13",
+    toolType: "Harrow",
+    images: ["/tools/harrow.svg", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
     description:
       "Mobile grain dryer for efficient post-harvest processing. Reduces grain moisture quickly and safely, preserving quality during storage.",
     make: "Alvan Blanch",

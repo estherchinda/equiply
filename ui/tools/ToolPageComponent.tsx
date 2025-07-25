@@ -72,6 +72,7 @@ export default function ToolsPageComponent() {
           <ToolTab
             key={tool.id}
             href={`/user/tools/${tool.id}`}
+            image={tool.images[0]}
             title={tool.toolType}
             subtitle={`Available in ${tool.distance} miles`}
           />

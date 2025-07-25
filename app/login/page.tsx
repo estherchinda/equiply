@@ -27,7 +27,7 @@ export default function LoginPage() {
     }));
   };
   return (
-    <section className="flex flex-col items-center justify-center min-h-full py-10 px-5 bg-[#122117] text-white space-y-5">
+    <section className="flex flex-col items-center justify-center min-h-screen py-10 px-5 bg-[#122117] text-white space-y-5">
       <h1 className="font-bold text-[28px] text-center">Welcome back</h1>
       <div className="w-full md:w-[500px] space-y-8">
         <EmailInput

@@ -2,22 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { RiMenu2Fill } from "react-icons/ri";
-import SearchInput from "@/ui/forms/SearchInput";
 import ProfileImageComponent from "@/ui/display/ProfileImageComponent";
 import { useSidebar } from "@/context/SidebarContext";
+import NotificationTab from "./NotificationTab";
 
 export default function Navigation() {
   const links = ["About", "How it works", "Pricing"];
   const pathname = usePathname();
   const { openMobile } = useSidebar();
-
-  const [query, setQuery] = useState("");
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
 
   const website = pathname.startsWith("/user");
   return (
@@ -41,7 +35,7 @@ export default function Navigation() {
 
       {website ? (
         <div className="hidden md:flex gap-3">
-          <SearchInput value={query} onChange={handleSearch} />
+          <NotificationTab/>
           <div>
             <ProfileImageComponent />
           </div>
@@ -65,7 +59,7 @@ export default function Navigation() {
             onClick={openMobile}
             className="text-white text-3xl hover:cursor-pointer hover:text-[#A6F2C4] transition-colors duration-300 sticky top-0"
           />
-          <SearchInput value={query} onChange={handleSearch} />
+          <NotificationTab/>
           <div>
             <ProfileImageComponent />
           </div>

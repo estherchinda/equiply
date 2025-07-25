@@ -29,7 +29,7 @@ export default function ResetPasswordPage() {
     console.log("Password reset successfully!");
   };
   return (
-    <section className="flex flex-col items-center justify-center min-h-[70vh] py-10 px-5 bg-[#122117] text-white space-y-5">
+    <section className="flex flex-col items-center justify-center min-h-[80vh] py-10 px-5 bg-[#122117] text-white space-y-5">
       <h1 className="font-bold text-[28px] text-center">Reset your password</h1>
       <p className="text-center">
         Enter the email address associated with your account, and{" "}

@@ -171,9 +171,18 @@ export default function Home() {
             <Heading content="Safety and Trust" />
             <div className="space-y-5">
               {safetyAndTrust.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className={`w-5 h-5 ${index % 2 === 1 ? "rounded-[4px]" : "rounded-[20px]"} border-2 border-[#404F45]`}></div>
-                  <p>{item}</p>
+                <div key={index} className="flex items-center gap-3 text-sm">
+                  <div className={
+                    index === 0 
+                      ? "w-5 h-5 border-2 border-[#404F45] rounded-[4px]"           // Square
+                      : index === 1 
+                      ? "w-0 h-0 border-l-[10px] border-r-[10px] border-b-[17px] border-l-transparent border-r-transparent border-b-[#404F45]"  // Triangle
+                      : "w-5 h-5 border-2 border-[#404F45] rounded-full"          // Circle
+                  }></div>
+                  <p>
+                    <strong>{item.heading}: </strong>
+                    <span>{item.content}</span>
+                  </p>
                 </div>
               ))}
             </div>

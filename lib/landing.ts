@@ -109,7 +109,16 @@ export const cards = [
 ];
 
 export const safetyAndTrust = [
-    "Verified User Profiles: All users undergo a verification process to ensure authenticity.",
-    "Secure Transactions: Payments are processed securely through our platform, protecting both renters and owners.",
-    "Transparent Reviews: Read reviews from other users to make informed decisions.",
+    {
+      heading: "Verified User Profiles",
+      content: "All users undergo a verification process to ensure authenticity.",
+    },
+    {
+      heading: "Secure Transactions",
+      content: "Payments are processed securely through our platform, protecting both renters and owners.",
+    },
+    {
+      heading: "Transparent Reviews",
+      content: "Read reviews from other users to make informed decisions.",
+    },
 ];

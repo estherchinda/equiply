@@ -7,7 +7,7 @@ import {
   RiEBikeLine,
   RiVerifiedBadgeLine,
   RiTimeLine,
-  RiMore2Fill,
+  // RiMore2Fill,
 } from "react-icons/ri";
 import { IconType } from "react-icons";
 import type {
@@ -57,10 +57,10 @@ export default function NotificationRow({
     <>
       <div
         onClick={handleModalOpen}
-        className={`w-full h-[72px] flex items-center justify-start md:p-4 gap-4 hover:cursor-pointer my-2 rounded-2xl`}
+        className={`w-full h-[72px] flex items-center justify-start gap-2 hover:cursor-pointer`}
       >
         <div
-          className="bg-[#264533] h-10 w-10 md:h-12 md:w-12 rounded-lg flex justify-center items-center text-white text-lg md:text-xl relative"
+          className="bg-[#1a352a] h-6 w-6 md:h-8 md:w-8 rounded-lg flex justify-center items-center text-white text-lg md:text-lg relative"
         >
           <Icon />
           {status === "unread" && (
@@ -70,17 +70,17 @@ export default function NotificationRow({
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-medium leading-6 truncate ">{message}</h3>
           <p
-            className="text-xs md:text-sm font-normal text-[#94C7A8] leading-5"
+            className="text-[10px] md:text-xs font-normal text-[#94C7A8] leading-5"
           >
             {time}
           </p>
         </div>
-        <button
+        {/* <button
           onClick={(e) => e.stopPropagation()}
           className="hidden md:flex text-xl group h-7 w-7 justify-center items-center rounded-lg hover:bg-[#264533]"
         >
           <RiMore2Fill className="group-hover:cursor-pointer" />
-        </button>
+        </button> */}
       </div>
 
       {isModalOpen && (

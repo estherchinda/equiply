@@ -1,22 +1,29 @@
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 
 type ToolTabProps = {
     href: string;
     title: string;
     subtitle: string;
+    image: string;
 }
 
 export default function ToolTab({
     href,
     title,
     subtitle,
+    image,
 }: ToolTabProps) {
     return (
-        <div className="space-y-2 hover:cursor-pointer relative group animate-pulse">
+        <div className="space-y-2 hover:cursor-pointer relative group">
             {/* image */}
-            <div className="h-[100px] w-full rounded-[12px] bg-[#264533]">
-                {/* <Image src={tool.image} alt={tool.toolType} height={100} width={170} style={{height: "auto", width: "auto"}} /> */}
+            <div className="h-[100px] w-full rounded-[12px] bg-[#264533] relative overflow-hidden">
+                <Image 
+                src={image} 
+                alt={title} 
+                fill
+                className="object-cover"
+                />
                 {/* link to details */}
                 <Link
                 href={href}

@@ -1,9 +1,9 @@
 import TableRow from "@/ui/tools/TableRow"; // adjust path if needed
 import { tools } from "@/lib/tools";
 import Link from "next/link";
-import ProfileImageComponent from "@/ui/display/ProfileImageComponent";
-import ContactComponent from "@/ui/tools/ContactComponent";
 import HeadingComponent from "@/ui/display/HeadingComponent";
+import Button from "@/ui/forms/Button";
+import Carousel from "@/ui/tools/Carousel";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -70,7 +70,9 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
       </p>
 
       <div className="flex flex-col justify-center items-center p-4 space-y-5">
-        <div className="h-[400px] md:h-[600px] w-full xl:w-[920px] rounded-[12px] bg-[#264533] animate-pulse"></div>
+        <Carousel
+        images={tool.images}
+        />
 
         {/* tool type  and description */}
         <div className="w-full">
@@ -81,41 +83,52 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
           <p className="leading-6 text-sm">{tool.description}</p>
         </div>
 
-        {/* details */}
-        <div className="w-full">
-          <HeadingComponent content="About this tool" marginBottom="5" />
-          {details.map((item) => (
-            <TableRow key={item.label} label={item.label} value={item.value} />
-          ))}
-        </div>
-
-        {/* pricing */}
-        <div className="w-full">
-          <HeadingComponent content="Pricing" marginBottom="5" />
-          {pricing.map((item) => (
-            <TableRow
-              key={item.label}
-              label={item.label}
-              value={item.value}
-              showNairaSign={true}
-            />
-          ))}
-        </div>
-
-        {/* owner */}
-        <div className="w-full">
-          <HeadingComponent content="Owner" marginBottom="5" />
-          <div className="flex items-center gap-4">
-            <ProfileImageComponent />
-            <div className="space-y-1">
-              <h4 className="text-sm font-medium leading-6">Ethan Carter</h4>
-              <p className="text-xs leading-5 text-[#94C7A8]">Joined 2021</p>
+          {/* details */}
+          <div className="w-full mt-5">
+            <HeadingComponent content="About this tool" marginBottom="5" />
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {details.slice(0, 5).map((item) => (
+                <TableRow
+                  key={item.label}
+                  label={item.label}
+                  value={item.value}
+                />
+              ))}
+                {details.slice(-5).map((item) => (
+                <TableRow
+                  key={item.label}
+                  label={item.label}
+                  value={item.value}
+                />
+              ))}
             </div>
           </div>
-        </div>
+          {/* pricing */}
+          <div className="w-full h-fit mt-10">
+            <HeadingComponent content="Pricing" marginBottom="5" />
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {pricing.slice(0, 2).map((item) => (
+                <TableRow
+                  key={item.label}
+                  label={item.label}
+                  value={item.value}
+                  showNairaSign={true}
+                />
+              ))}
+              {pricing.slice(-2).map((item) => (
+                <TableRow
+                  key={item.label}
+                  label={item.label}
+                  value={item.value}
+                  showNairaSign={true}
+                />
+              ))}
+            </div>
+          </div>
 
-        {/* contact owner */}
-        <ContactComponent />
+          <div className="flex justify-end w-[180px]">
+            <Button content="Request" />
+          </div>
       </div>
     </section>
   );

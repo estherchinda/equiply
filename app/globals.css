@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "keen-slider/keen-slider.min.css";
 
 body {
   background: var(--background);
@@ -94,5 +95,28 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 2px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
 
 

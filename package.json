@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "framer-motion": "^12.18.1",
+    "keen-slider": "^6.8.6",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-masonry-css": "^1.0.16",
     "zustand": "^5.0.5"
   },
   "devDependencies": {

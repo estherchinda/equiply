@@ -14,7 +14,7 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-[70vh] py-10 px-5 bg-[#122117] text-white space-y-5">
+    <section className="flex flex-col items-center justify-center h-[80vh] py-10 px-5 bg-[#122117] text-white space-y-5">
       <h1 className="font-bold text-[28px] text-center">Forgot password</h1>
       <p className="text-center">
         Enter the email address associated with your account, and{" "}

@@ -5,7 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigations } from "../../lib/sidebar";
 import { notifications } from "../../types/notifications";
-import { RiArrowRightWideLine, RiArrowLeftWideLine } from "react-icons/ri";
+import {
+  RiArrowRightWideLine,
+  RiArrowLeftWideLine,
+  RiLoginCircleLine,
+} from "react-icons/ri";
 import { useSidebar } from "@/context/SidebarContext";
 
 export default function Sidebar() {
@@ -46,10 +50,10 @@ export default function Sidebar() {
         >
           <Link href={"/user/profile/all"} className="flex items-center mt-2.5">
             <Image
-              src={collapsed ? "/favicon.svg" : "/equiply-logo.png"}
+              src={collapsed ? "/favicon.png" : "/equiply-logo.png"}
               alt="Equiply 2025."
-              width={collapsed ? 20 : 250}
-              height={collapsed ? 20 : 250}
+              width={collapsed ? 50 : 150}
+              height={collapsed ? 50 : 150}
               style={{ width: "auto", height: "auto" }}
               priority
             />
@@ -63,7 +67,7 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <section className="space-y-5">
+        <section className="space-y-5 h-full">
           {navigations.map((nav, index) => {
             const isActive = pathname.startsWith(nav.href);
             const Icon = isActive ? nav.iconActive : nav.icon;
@@ -108,17 +112,25 @@ export default function Sidebar() {
           })}
         </section>
 
-        {/* Footer */}
-        <div className="w-full flex justify-center self-end mt-28">
-          <a
-            href="https://www.linkedin.com/in/air-str/"
-            target="_blank"
-            className={`${
-              collapsed ? "text-[10px]" : "text-xs"
-            } text-center nav-link`}
+        {/* logout */}
+        <div
+          className={`flex ${
+            collapsed
+              ? "justify-center h-10 w-10"
+              : "justify-between h-10 w-full"
+          } items-center rounded-3xl py-2 px-5 mb-3 text-white hover:bg-[#1a352a] transition-colors duration-300 cursor-pointer`}
+        >
+          <div
+            className={`flex items-center gap-2`}
+            title={collapsed ? "Logout" : ""}
           >
-            &copy; Built by air_str
-          </a>
+            <RiLoginCircleLine className={`text-[#94C7A8]"} text-[21px]`} />
+            {!collapsed && (
+              <span className="text-sm font-medium transition-opacity duration-200">
+                Logout
+              </span>
+            )}
+          </div>
         </div>
       </aside>
     </>
