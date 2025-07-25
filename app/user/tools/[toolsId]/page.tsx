@@ -128,7 +128,10 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
           </div>
 
           {/* <RequestModal /> */}
-          <Button content="Request" href={`/user/tools/${tool.id}/request`} />
+          <Button 
+          content="Request" 
+          // href={`/user/tools/${tool.id}/request`} 
+          />
       </div>
     </section>
   );
