@@ -24,7 +24,7 @@ export const navigations = [
       hasUnread: false,
     },
     {
-      name: "Listings",
+      name: "Your Listings",
       href: "/user/listings",
       icon: RiListIndefinite,
       iconActive: RiListCheck3,

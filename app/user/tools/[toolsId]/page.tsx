@@ -2,8 +2,8 @@ import TableRow from "@/ui/tools/TableRow"; // adjust path if needed
 import { tools } from "@/lib/tools";
 import Link from "next/link";
 import HeadingComponent from "@/ui/display/HeadingComponent";
-import Button from "@/ui/forms/Button";
 import Carousel from "@/ui/tools/Carousel";
+import Button from "@/ui/forms/Button";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -58,6 +58,7 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
     { label: "Monthly rate", value: tool.pricing.monthlyRate },
     { label: "Security deposit", value: tool.pricing.secureDeposit },
   ];
+
 
   return (
     <section className="h-full md:mx-8">
@@ -126,9 +127,8 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
             </div>
           </div>
 
-          <div className="flex justify-end w-[180px]">
-            <Button content="Request" />
-          </div>
+          {/* <RequestModal /> */}
+          <Button content="Request" href={`/user/tools/${tool.id}/request`} />
       </div>
     </section>
   );

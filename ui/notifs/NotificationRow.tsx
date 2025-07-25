@@ -84,12 +84,20 @@ export default function NotificationRow({
       </div>
 
       {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={handleModalClose}
-          type={type}
-          message={message}
-        />
+        <Modal onClose={handleModalClose} isOpen={isModalOpen}>
+          <h2 className="text-xl font-semibold mb-2 capitalize">
+                {type === 'follower' ? 'New Follower' : type}
+              </h2>
+              <p className="text-sm">{message}</p>
+              <div className="mt-6 flex justify-end gap-2">
+                <button
+                  onClick={handleModalClose}
+                  className="px-4 py-2 rounded-md text-sm font-medium bg-[#94C7A8] text-[#122117] hover:bg-[#79b691] hover:cursor-pointer"
+                >
+                  Okay
+                </button>
+              </div>
+        </Modal>
       )}
     </>
   );
