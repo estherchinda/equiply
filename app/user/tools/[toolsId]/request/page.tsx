@@ -10,11 +10,6 @@ type DateRange = {
   to?: Date;
 };
 
-type CProps = {
-  onChange?: (range: DateRange) => void;
-  onContinue?: (range: DateRange) => void;
-};
-
 // Utility functions
 const formatMonthYear = (date: Date) => {
   const months = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -163,102 +158,113 @@ const CalendarMonth = ({
   );
 };
 
-export default function DualCalendarPicker({ onChange, onContinue }: CProps) {
-const {
-  selectedRange,
-  currentMonth,
-  handleDateSelect,
-  nextMonth,
-  prevMonth,
-  getSecondMonth,
-  handleContinue,
-  formatPrice,
-  isSelecting,
-  tempStartDate,
-} = useDateRange(onChange, onContinue);
+// Next.js page component - no custom props needed
+export default function RequestPage() {
+  // Handle date changes internally or use state management
+  const handleDateChange = (range: DateRange) => {
+    console.log('Date range changed:', range);
+    // Handle the date change logic here
+  };
 
+  const handleContinue = (range: DateRange) => {
+    console.log('Continue with range:', range);
+    // Handle continue logic here (navigation, state updates, etc.)
+  };
 
-return (
-  <div className="min-h-screen text-white p-6">
-      {/* Header */}
-      <div className="mb-6">
-        <p className="text-sm font-medium leading-6 space-x-2">
-           <span className="text-[#94C7A8]">Equipment</span>
-           <span className="text-[#94C7A8]">/</span>
-           <span>Choose Dates</span>
-       </p>
-        <h1 className="text-2xl font-bold mb-2">Choose Dates</h1>
-        <p className="text-gray-400 text-sm">
-          Select the date(s) you&apos;d like to rent the equipment for.
-        </p>
-      </div>
+  const {
+    selectedRange,
+    currentMonth,
+    handleDateSelect,
+    nextMonth,
+    prevMonth,
+    getSecondMonth,
+    handleContinue: hookHandleContinue,
+    formatPrice,
+    isSelecting,
+    tempStartDate,
+  } = useDateRange(handleDateChange, handleContinue);
 
-      {/* Date Input Display */}
-      <div className="mb-6">
-        <div className="bg-transparent border border-gray-600 rounded-lg p-3 text-gray-400">
-          {selectedRange.from && selectedRange.to 
-            ? `${selectedRange.from.toLocaleDateString()} - ${selectedRange.to.toLocaleDateString()}`
-            : "Select date or a date range"
-          }
+  return (
+    <div className="min-h-screen text-white p-6">
+        {/* Header */}
+        <div className="mb-6">
+          <p className="text-sm font-medium leading-6 space-x-2">
+             <span className="text-[#94C7A8]">Equipment</span>
+             <span className="text-[#94C7A8]">/</span>
+             <span>Choose Dates</span>
+         </p>
+          <h1 className="text-2xl font-bold mb-2">Choose Dates</h1>
+          <p className="text-gray-400 text-sm">
+            Select the date(s) you&apos;d like to rent the equipment for.
+          </p>
         </div>
-      </div>
 
-      {/* Navigation */}
-      <div className="flex justify-between items-center mb-6">
-        <button
-          onClick={prevMonth}
-          className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
-        >
-          <FaArrowLeftLong/>
-        </button>
-        <button
-          onClick={nextMonth}
-          className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
-        >
-          <FaArrowRightLong/>
-        </button>
-      </div>
+        {/* Date Input Display */}
+        <div className="mb-6">
+          <div className="bg-transparent border border-gray-600 rounded-lg p-3 text-gray-400">
+            {selectedRange.from && selectedRange.to 
+              ? `${selectedRange.from.toLocaleDateString()} - ${selectedRange.to.toLocaleDateString()}`
+              : "Select date or a date range"
+            }
+          </div>
+        </div>
 
-      {/* Dual Calendar */}
-      <div className="flex gap-8 mb-8">
-        <CalendarMonth
-          month={currentMonth}
-          selectedRange={selectedRange}
-          onDateSelect={handleDateSelect}
-          isSelecting={isSelecting}
-          tempStart={tempStartDate ?? undefined}
+        {/* Navigation */}
+        <div className="flex justify-between items-center mb-6">
+          <button
+            onClick={prevMonth}
+            className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
+          >
+            <FaArrowLeftLong/>
+          </button>
+          <button
+            onClick={nextMonth}
+            className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
+          >
+            <FaArrowRightLong/>
+          </button>
+        </div>
+
+        {/* Dual Calendar */}
+        <div className="flex gap-8 mb-8">
+          <CalendarMonth
+            month={currentMonth}
+            selectedRange={selectedRange}
+            onDateSelect={handleDateSelect}
+            isSelecting={isSelecting}
+            tempStart={tempStartDate ?? undefined}
+          />
+          
+          <CalendarMonth
+            month={getSecondMonth()}
+            selectedRange={selectedRange}
+            onDateSelect={handleDateSelect}
+            isSelecting={isSelecting}
+            tempStart={tempStartDate ?? undefined}
+          />
+        </div>
+
+        {/* Availability Section */}
+        <div className="mb-6">
+          <Heading content="Availability" marginBottom="5" />
+          <p className="text-gray-400 text-sm">
+            This equipment is available on the selected dates.
+          </p>
+        </div>
+
+        {/* Price Section */}
+        <div className="mb-8">
+          <Heading content="Price" marginBottom="5" />
+          <p className="text-gray-400 text-sm">
+            {formatPrice()}
+          </p>
+        </div>
+
+        {/* Continue Button */}
+        <Button
+          content="Continue"
+          onClick={hookHandleContinue}
         />
-        
-        <CalendarMonth
-          month={getSecondMonth()}
-          selectedRange={selectedRange}
-          onDateSelect={handleDateSelect}
-          isSelecting={isSelecting}
-          tempStart={tempStartDate ?? undefined}
-        />
       </div>
-
-      {/* Availability Section */}
-      <div className="mb-6">
-        <Heading content="Availability" marginBottom="5" />
-        <p className="text-gray-400 text-sm">
-          This equipment is available on the selected dates.
-        </p>
-      </div>
-
-      {/* Price Section */}
-      <div className="mb-8">
-        <Heading content="Price" marginBottom="5" />
-        <p className="text-gray-400 text-sm">
-          {formatPrice()}
-        </p>
-      </div>
-
-      {/* Continue Button */}
-      <Button
-        content="Continue"
-        onClick={handleContinue}
-      />
-    </div>
-  );
+    );
 }
