@@ -3,13 +3,11 @@
 import { userListings } from "@/lib/equipments";
 import { useState } from "react";
 import Heading from "../display/HeadingComponent";
-import Table from "../display/TableComponent";
 import SearchInput from "../forms/SearchInput";
 import Dropdown from "../forms/Dropdown";
 import Button from "../forms/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { formatShortDate } from "@/utils/equipments";
 import Tag from "../display/Tag";
 
 export default function ListingsComponent() {
@@ -48,8 +46,6 @@ export default function ListingsComponent() {
     "Availability",
     "Actions",
   ];
-
-  const data = [{}];
 
   return (
     <section>

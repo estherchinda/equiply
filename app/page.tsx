@@ -70,7 +70,7 @@ export default function Home() {
               <FaArrowRight />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3 w-full">
               {featuredEquipments.map((f, i) => (
                 <div key={i} className="space-y-3">
                   <div className="w-full md:w-[300px] h-[200px] relative">
