@@ -1,7 +1,7 @@
 export const reviews = [
     {
         id: 1,
-        image: "https://res.cloudinary.com/dygn4o3nv/image/upload/v1739359061/matthew-hamilton-vz5afU8OCig-unsplash_emuzfx.jpg",
+        image: "/pfp-male.webp",
         name: "Adebayo Balogun",
         date: "2 weeks ago",
         review: "Ethan is a great guy and his equipment is top-notch. I rented his tractor for a week and it worked perfectly. Highly recommend!",
@@ -15,7 +15,7 @@ export const reviews = [
     },
     {
         id: 2,
-        image: "https://res.cloudinary.com/dygn4o3nv/image/upload/v1750431094/vince-veras-AJIqZDAUD7A-unsplash_rvw05r.jpg",
+        image: "/pfp-female.webp",
         name: "Grace Yakubu",
         date: "2 months ago",
         review: "Rented a plow from Ethan. It was in good condition and he was very helpful with instructions. Would rent again.",
@@ -29,7 +29,7 @@ export const reviews = [
     },
     {
         id: 3,
-        image: "https://res.cloudinary.com/dygn4o3nv/image/upload/v1750431092/christopher-campbell-rDEOVtE7vOs-unsplash_izm17k.jpg",
+        image: "/pfp-female.webp",
         name: "Zaniab Abdullahi",
         date: "3 months ago",
         review: "Ethan is a great guy and his equipment is top-notch. I rented his tractor for a week and it worked perfectly. Highly recommend!",
@@ -43,7 +43,7 @@ export const reviews = [
     },
     {
         id: 4,
-        image: "https://res.cloudinary.com/dygn4o3nv/image/upload/v1750431090/diego-hernandez-MSepzbKFz10-unsplash_zmv8um.jpg",
+        image: "/pfp-male.webp",
         name: "Chinedu Okoro",
         date: "5 months ago",
         review: "Didn't like the tool. Famrer was difficult to communicate with",

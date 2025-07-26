@@ -46,7 +46,7 @@ export default function ReviewsRow ({
               <div className="h-10 w-10 rounded-full overflow-hidden">
                 <ImageWithFallback
                     src={image}
-                    fallbackSrc="/default-avatar.jpg"
+                    fallbackSrc="/pfp-gender.webp"
                     alt={`Profile Image - ${name}`}
                     height={40}
                     width={40}
