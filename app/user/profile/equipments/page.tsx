@@ -9,6 +9,7 @@ export default function Equipments() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {tools.slice(0, 8).map((tool) => (
           <ToolTab
+            image={tool.images[0]}
             key={tool.id}
             href={`/user/tools/${tool.id}`}
             title={tool.toolType}
