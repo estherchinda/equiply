@@ -20,6 +20,7 @@ export default function AllTabs() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {tools.slice(0, 4).map((tool) => (
             <ToolTab
+              image={tool.images[0]}
               key={tool.id}
               href={`/user/tools/${tool.id}`}
               title={tool.toolType}
