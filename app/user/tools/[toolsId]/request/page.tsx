@@ -2,6 +2,7 @@
 
 import Heading from "@/ui/display/HeadingComponent";
 import Button from "@/ui/forms/Button";
+import DateRangePicker from "@/ui/forms/DateRangePicker";
 
 export default function RequestPage() {
     return (
@@ -14,7 +15,7 @@ export default function RequestPage() {
             <div className="mt-4 space-y-3">
                 <Heading content="Choose Dates" />
                 <p className="text-sm leading-5 text-[#9EB8A8]">Select the dates you&apos;d like to rent the equipment for.</p>
-                {/* <DateRangePicker /> */}
+                <DateRangePicker />
                 <Heading content="Availability" />
                 <p className="text-sm leading-5 text-white">Please select a date range to see the availability.</p>
                 <Heading content="Price" />
