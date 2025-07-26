@@ -12,7 +12,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     const track = document.querySelector(".carousel-track") as HTMLElement;
     const indicators = document.querySelectorAll(".carousel-indicator");
     const container = document.querySelector(".carousel-container");
-    const totalSlides = indicators.length;
+    const totalSlides = images.length;
     let currentIndex = 0;
     let interval: NodeJS.Timeout;
     const isPaused = false;

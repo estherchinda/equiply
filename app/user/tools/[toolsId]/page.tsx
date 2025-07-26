@@ -4,6 +4,7 @@ import Link from "next/link";
 import HeadingComponent from "@/ui/display/HeadingComponent";
 import Carousel from "@/ui/tools/Carousel";
 import Button from "@/ui/forms/Button";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -80,8 +81,13 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
           <h1 className="text-[22px] font-bold leading-7 mb-2.5">
             {tool.toolType}
           </h1>
-          {/* <HeadingComponent content={tool.toolType} /> */}
-          <p className="leading-6 text-sm">{tool.description}</p>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            <p className="leading-6 text-sm">{tool.description}</p>
+            <div className="flex justify-end w-full items-center gap-1.5">
+              <CiLocationArrow1/>
+              <p className="text-base">{tool.distance} kilometers away</p>
+            </div>
+          </div>
         </div>
 
           {/* details */}

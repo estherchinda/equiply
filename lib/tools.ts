@@ -2,7 +2,7 @@ export const tools = [
   {
    id: "1",
    toolType: "Drone",
-   images: ["/tools/drone.jpg", "https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"],
+   images: ["/tools/drone-2.svg", "/tools/drone-3.svg"],
    description:
      "Professional agricultural drone with crop monitoring capabilities. Features multispectral imaging, precision spraying system, and GPS-guided autonomous flight for field mapping and targeted treatments.",
    make: "DJI",
@@ -20,7 +20,7 @@ export const tools = [
      monthlyRate: 4800,
      secureDeposit: 1200,
    },
-   distance: 28, // Distance in miles for local rentals
+   distance: 8, // Distance in miles for local rentals
 },
   {
     id: "2",
@@ -89,7 +89,7 @@ export const tools = [
       monthlyRate: 8500,
       secureDeposit: 1200,
     },
-    distance: 80, // Distance in miles for local rentals
+    distance: 8, // Distance in miles for local rentals
   },
   {
     id: "5",
@@ -112,7 +112,7 @@ export const tools = [
       monthlyRate: 1400,
       secureDeposit: 300,
     },
-    distance: 15, // Distance in miles for local rentals
+    distance: 5, // Distance in miles for local rentals
   },
   {
     id: "6",
@@ -135,7 +135,7 @@ export const tools = [
       monthlyRate: 700,
       secureDeposit: 100,
     },
-    distance: 32, // Distance in miles for local rentals
+    distance: 3, // Distance in miles for local rentals
   },
   {
     id: "7",
@@ -227,7 +227,7 @@ export const tools = [
       monthlyRate: 1000,
       secureDeposit: 200,
     },
-    distance: 20, // Distance in miles for local rentals
+    distance: 2, // Distance in miles for local rentals
   },
   {
     id: "11",
@@ -250,7 +250,7 @@ export const tools = [
       monthlyRate: 1100,
       secureDeposit: 250,
     },
-    distance: 20, // Distance in miles for local rentals
+    distance: 4, // Distance in miles for local rentals
   },
   {
     id: "12",
@@ -273,7 +273,7 @@ export const tools = [
       monthlyRate: 1200,
       secureDeposit: 300,
     },
-    distance: 80, // Distance in miles for local rentals
+    distance: 8, // Distance in miles for local rentals
   },
   {
     id: "13",
@@ -296,6 +296,6 @@ export const tools = [
       monthlyRate: 2500,
       secureDeposit: 600,
     },
-    distance: 43, // Distance in miles for local rentals
+    distance: 3, // Distance in miles for local rentals
   },
 ];

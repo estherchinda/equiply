@@ -74,7 +74,7 @@ export default function ToolsPageComponent() {
             href={`/user/tools/${tool.id}`}
             image={tool.images[0]}
             title={tool.toolType}
-            subtitle={`Available in ${tool.distance} miles`}
+            subtitle={`Available in ${tool.distance} kilometers`}
           />
         ))}
       </div>
