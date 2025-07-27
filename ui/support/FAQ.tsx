@@ -31,6 +31,11 @@ export default function FAQ() {
     },
   ];
 
+  const filteredFaqData = faqData.filter(faq => {
+    return faq.question.toLowerCase().includes(query.toLowerCase()) || 
+       faq.answer.toLowerCase().includes(query.toLowerCase());
+  })
+
   return (
     <div className="space-y-8 my-10">
       <SearchInput
@@ -40,7 +45,7 @@ export default function FAQ() {
       />
       <Heading content="Frequently Asked Questions" />
       <div className="space-y-4">
-        {faqData.map((faq, index) => (
+        {filteredFaqData.map((faq, index) => (
           <details  key={index} className="flex flex-col rounded-xl bg-[#264533] px-[15px] py-[7px] group">
                 <summary className="flex cursor-pointer items-center justify-between gap-6 py-2 transition-all duration-200 ease-in-out">
                   <p className="text-white text-sm font-medium leading-normal">{faq.question}</p>
