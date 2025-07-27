@@ -55,16 +55,16 @@ export default function PaymentDetails() {
             onChange={handleInputChange}
           />
         </div>
-        <div className="flex justify-end w-full mt-5">
+        <div className="flex justify-between items-end w-full mt-5">
+        <p className="text-gray-400">
+            You can manage your payment methods here. If you have any issues, please
+            contact <a href="#" className="text-white underline">support</a>.
+        </p>
           <div className="w-[250px]">
             <Button content="Add Payment Method" />
           </div>
         </div>
       </form>
-      <p className="text-gray-400">
-        You can manage your payment methods here. If you have any issues, please
-        contact support.
-      </p>
     </div>
   );
 }

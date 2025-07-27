@@ -43,7 +43,7 @@ export default function SystemPreferences() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold">Display Perferences</h3>
+        <h3 className="text-xl font-bold">Display Preferences</h3>
         <div className="mt-5 flex gap-4 items-center">
             {display.map((d, i) => (
                 <label

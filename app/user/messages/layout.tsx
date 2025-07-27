@@ -1,4 +1,4 @@
-import MessageSidebar from "@/ui/messages/MessagesSideBar";
+import MessageSidebar from "@/ui/support/MessagesSideBar";
 
 export default function MessageLayout({children}: { children: React.ReactNode;}) {
   return (

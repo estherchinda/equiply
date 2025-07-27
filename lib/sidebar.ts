@@ -39,7 +39,7 @@ export const navigations = [
     },
     {
       name: "Support",
-      href: "/user/messages/chat", // actually "chats"
+      href: "/user/support", // actually "chats"
       icon: RiMessage3Line,
       iconActive: RiMessage3Fill,
       hasUnread: false,
