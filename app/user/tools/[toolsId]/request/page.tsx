@@ -4,6 +4,8 @@ import Heading from "@/ui/display/HeadingComponent";
 import Button from "@/ui/forms/Button";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import useDateRange from "@/utils/request";
+import ConfirmModal from "./ConfirmModal";
+import { useState } from "react";
 
 type DateRange = {
   from?: Date;
@@ -177,12 +179,13 @@ export default function RequestPage() {
     handleDateSelect,
     nextMonth,
     prevMonth,
-    getSecondMonth,
-    handleContinue: hookHandleContinue,
+    // handleContinue: hookHandleContinue,
     formatPrice,
     isSelecting,
     tempStartDate,
   } = useDateRange(handleDateChange, handleContinue);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen text-white p-6">
@@ -195,7 +198,7 @@ export default function RequestPage() {
          </p>
           <h1 className="text-2xl font-bold mb-2">Choose Dates</h1>
           <p className="text-gray-400 text-sm">
-            Select the date(s) you&apos;d like to rent the equipment for.
+            Select the date(s) you would like to rent the equipment for.
           </p>
         </div>
 
@@ -209,61 +212,78 @@ export default function RequestPage() {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex justify-between items-center mb-6">
-          <button
-            onClick={prevMonth}
-            className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
-          >
-            <FaArrowLeftLong/>
-          </button>
-          <button
-            onClick={nextMonth}
-            className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
-          >
-            <FaArrowRightLong/>
-          </button>
+        <div className="flex justify-between items-center w-full gap-6">
+          <div>
+            {/* Navigation */}
+            <div className="flex justify-between items-center mb-6 w-[400px]">
+              <button
+                onClick={prevMonth}
+                className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
+              >
+                <FaArrowLeftLong/>
+              </button>
+              <button
+                onClick={nextMonth}
+                className="p-2 hover:bg-[#1a352a] cursor-pointer rounded text-white"
+              >
+                <FaArrowRightLong/>
+              </button>
+            </div>
+
+            {/* Dual Calendar */}
+            <div className="flex gap-8 mb-8 w-[400px]">
+              <CalendarMonth
+                month={currentMonth}
+                selectedRange={selectedRange}
+                onDateSelect={handleDateSelect}
+                isSelecting={isSelecting}
+                tempStart={tempStartDate ?? undefined}
+              />
+            </div>
+          </div>
+          <div className="w-full">
+            {/* Availability Section */}
+            <div className="mb-6">
+              <Heading content="Availability" marginBottom="5" />
+              <p className="text-gray-400 text-sm">
+                This equipment is available on the selected dates.
+              </p>
+            </div>
+
+            {/* Price Section */}
+            <div className="mb-8">
+              <Heading content="Price" marginBottom="5" />
+              <p className="text-gray-400 text-sm">
+                {formatPrice()}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Dual Calendar */}
-        <div className="flex gap-8 mb-8">
-          <CalendarMonth
-            month={currentMonth}
-            selectedRange={selectedRange}
-            onDateSelect={handleDateSelect}
-            isSelecting={isSelecting}
-            tempStart={tempStartDate ?? undefined}
-          />
-          
-          <CalendarMonth
-            month={getSecondMonth()}
-            selectedRange={selectedRange}
-            onDateSelect={handleDateSelect}
-            isSelecting={isSelecting}
-            tempStart={tempStartDate ?? undefined}
-          />
-        </div>
-
-        {/* Availability Section */}
-        <div className="mb-6">
-          <Heading content="Availability" marginBottom="5" />
-          <p className="text-gray-400 text-sm">
-            This equipment is available on the selected dates.
-          </p>
-        </div>
-
-        {/* Price Section */}
-        <div className="mb-8">
-          <Heading content="Price" marginBottom="5" />
-          <p className="text-gray-400 text-sm">
-            {formatPrice()}
-          </p>
-        </div>
-
-        {/* Continue Button */}
-        <Button
-          content="Continue"
-          onClick={hookHandleContinue}
+            <div className="justify-end flex w-full gap-5">
+              <div className="w-[200px]">
+                <Button
+                  isSecondary
+                  content="Back"
+                  onClick={() => window.history.back()}
+                />
+              </div>
+            <div className="w-[200px]">
+              {/* Continue Button */}
+              <Button
+                content="Continue"
+                onClick={() => setIsModalOpen(true)}
+              />
+            </div>
+            </div>
+        {/* Confirmation Modal */}
+        <ConfirmModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          // onConfirm={() => {
+          //   hookHandleContinue();
+          //   setIsModalOpen(false);
+          // }}
         />
       </div>
     );

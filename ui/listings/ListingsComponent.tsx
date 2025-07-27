@@ -41,6 +41,7 @@ export default function ListingsComponent() {
 
   const head = [
     "Item",
+    "Name",
     "Description",
     "Rental Rate",
     "Availability",
@@ -67,9 +68,9 @@ export default function ListingsComponent() {
         </section>
       ) : (
         <section className="space-y-3">
-          <Heading content="Your orders" />
+          <Heading content="Your listings" />
           <SearchInput
-            placeholder="Search orders"
+            placeholder="Search list"
             value={query}
             onChange={handleSearch}
           />
@@ -120,7 +121,7 @@ export default function ListingsComponent() {
                         className="border-b border-[#4A5D4A] text-sm"
                       >
                         <td className="py-6 px-6">
-                          <div className="h-10 w-10 rounded-full relative overflow-hidden">
+                          <div className="h-14 w-14 rounded-full relative overflow-hidden">
                             <Image
                             src={order.image}
                             alt="Image of tool"
@@ -128,6 +129,9 @@ export default function ListingsComponent() {
                             className="object-cover"
                             />
                           </div>
+                        </td>
+                        <td className="py-6 px-6 text-[#A8BFA8] leading-relaxed">
+                          {order.name}
                         </td>
                         <td className="py-6 px-6 text-[#A8BFA8] leading-relaxed">
                           {order.description}

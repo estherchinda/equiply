@@ -67,7 +67,7 @@ export default function useDateRange(onChange?: (range: DateRange) => void, onCo
         (selectedRange.to.getTime() - selectedRange.from.getTime()) /
           (1000 * 60 * 60 * 24)
       ) + 1;
-    return `NGN ${50 * days} / ${days} day${days > 1 ? "s" : ""}`;
+    return `NGN ${500 * days} / ${days} day${days > 1 ? "s" : ""}`;
   };
 
   return {
