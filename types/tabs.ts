@@ -13,7 +13,7 @@ export const tabsList = [
     {
         id: 1,
         tabName: "All",
-        href: "/user/profile/all"
+        href: "/user/profile"
     },
     {
         id: 2,

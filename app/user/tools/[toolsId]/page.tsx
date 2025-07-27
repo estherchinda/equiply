@@ -5,6 +5,9 @@ import HeadingComponent from "@/ui/display/HeadingComponent";
 import Carousel from "@/ui/tools/Carousel";
 import Button from "@/ui/forms/Button";
 import { CiLocationArrow1 } from "react-icons/ci";
+import ReviewsRow from "@/ui/profile/ReviewsRowComponent";
+import { reviews } from "@/lib/reviews";
+import Heading from "@/ui/display/HeadingComponent";
 
 interface ToolDetailsProps {
   params: Promise<{
@@ -60,7 +63,6 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
     { label: "Security deposit", value: tool.pricing.secureDeposit },
   ];
 
-
   return (
     <section className="h-full md:mx-8">
       <p className="text-sm font-medium leading-6 space-x-2">
@@ -72,9 +74,7 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
       </p>
 
       <div className="flex flex-col justify-center items-center p-4 space-y-5">
-        <Carousel
-        images={tool.images}
-        />
+        <Carousel images={tool.images} />
 
         {/* tool type  and description */}
         <div className="w-full">
@@ -84,60 +84,74 @@ export default async function ToolDetails({ params }: ToolDetailsProps) {
           <div className="flex flex-col md:flex-row justify-between items-start">
             <p className="leading-6 text-sm">{tool.description}</p>
             <div className="flex justify-end w-full items-center gap-1.5">
-              <CiLocationArrow1/>
+              <CiLocationArrow1 />
               <p className="text-base">{tool.distance} kilometers away</p>
             </div>
           </div>
         </div>
 
-          {/* details */}
-          <div className="w-full mt-5">
-            <HeadingComponent content="About this tool" marginBottom="5" />
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              {details.slice(0, 5).map((item) => (
-                <TableRow
-                  key={item.label}
-                  label={item.label}
-                  value={item.value}
-                />
-              ))}
-                {details.slice(-5).map((item) => (
-                <TableRow
-                  key={item.label}
-                  label={item.label}
-                  value={item.value}
-                />
-              ))}
-            </div>
+        {/* details */}
+        <div className="w-full mt-5">
+          <HeadingComponent content="About this tool" marginBottom="5" />
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {details.slice(0, 5).map((item) => (
+              <TableRow
+                key={item.label}
+                label={item.label}
+                value={item.value}
+              />
+            ))}
+            {details.slice(-5).map((item) => (
+              <TableRow
+                key={item.label}
+                label={item.label}
+                value={item.value}
+              />
+            ))}
           </div>
-          {/* pricing */}
-          <div className="w-full h-fit mt-10">
-            <HeadingComponent content="Pricing" marginBottom="5" />
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              {pricing.slice(0, 2).map((item) => (
-                <TableRow
-                  key={item.label}
-                  label={item.label}
-                  value={item.value}
-                  showNairaSign={true}
-                />
-              ))}
-              {pricing.slice(-2).map((item) => (
-                <TableRow
-                  key={item.label}
-                  label={item.label}
-                  value={item.value}
-                  showNairaSign={true}
-                />
-              ))}
-            </div>
+        </div>
+        {/* pricing */}
+        <div className="w-full h-fit mt-10">
+          <HeadingComponent content="Pricing" marginBottom="5" />
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {pricing.slice(0, 2).map((item) => (
+              <TableRow
+                key={item.label}
+                label={item.label}
+                value={item.value}
+                showNairaSign={true}
+              />
+            ))}
+            {pricing.slice(-2).map((item) => (
+              <TableRow
+                key={item.label}
+                label={item.label}
+                value={item.value}
+                showNairaSign={true}
+              />
+            ))}
           </div>
+        </div>
 
-          {/* <RequestModal /> */}
-          <Button 
-          content="Request" 
-          href={`/user/tools/${tool.id}/request`} 
-          />
+        {/* rewiews */}
+        <div className="w-full">
+          <Heading content="Reviews" className="text-start" />
+          <div className="w-full flex-col justify-end items-center mt-5 space-y-5">
+            {reviews.slice(0, 2).map((review) => (
+              <ReviewsRow
+                key={review.id}
+                image={review.image}
+                name={review.name}
+                date={review.date}
+                review={review.review}
+                stars={review.stars}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* <RequestModal /> */}
+        <Button content="Request" href={`/user/tools/${tool.id}/request`} />
       </div>
     </section>
   );

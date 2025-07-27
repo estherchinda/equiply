@@ -4,7 +4,7 @@ export const reviews = [
         image: "/pfp-male.webp",
         name: "Adebayo Balogun",
         date: "2 weeks ago",
-        review: "Ethan is a great guy and his equipment is top-notch. I rented his tractor for a week and it worked perfectly. Highly recommend!",
+        review: "I rented this equipment for a week and it worked perfectly. Highly recommend!",
         stars: {
             1: true,
             2: true,
@@ -18,7 +18,7 @@ export const reviews = [
         image: "/pfp-female.webp",
         name: "Grace Yakubu",
         date: "2 months ago",
-        review: "Rented a plow from Ethan. It was in good condition and he was very helpful with instructions. Would rent again.",
+        review: "It was in good condition and the support team was very helpful with instructions. Would rent again.",
         stars: {
             1: true,
             2: true,
@@ -32,7 +32,7 @@ export const reviews = [
         image: "/pfp-female.webp",
         name: "Zaniab Abdullahi",
         date: "3 months ago",
-        review: "Ethan is a great guy and his equipment is top-notch. I rented his tractor for a week and it worked perfectly. Highly recommend!",
+        review: "I rented this equipment for a week and it worked perfectly. Highly recommend!",
         stars: {
             1: true,
             2: true,
