@@ -6,9 +6,5 @@ export const metadata = {
 };
 
 export default function ProfilePage() {
-  return (
-    <section className="mt-10 space-y-10">
-      <ProfileHeader />
-    </section>
-  );
+  return <ProfileHeader />;
 }

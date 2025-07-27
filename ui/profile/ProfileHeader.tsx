@@ -4,17 +4,15 @@ import Image from "next/image";
 import Heading from "@/ui/display/HeadingComponent";
 import { AiOutlineGift } from "react-icons/ai";
 import TabComponent from "../display/TabComponent";
-import AllTabs from "@/app/user/profile/All";
-import RentalHistory from "@/app/user/profile/RentalHistory";
-import Equipments from "@/app/user/profile/Equipments";
-import Reviews from "@/app/user/profile/Reviews";
+import PersonalInformation from "./PersonalInformation";
+import PaymentDetails from "./PaymentDetails";
+import SystemPreferences from "./SystemPreferences";
 
 export default function ProfileHeader() {
   const tabs = [
-    { tabName: "Personal Information", component: <AllTabs />, id: 1 },
-    { tabName: "Payment Details", component: <RentalHistory />, id: 2 },
-    { tabName: "System Preferences", component: <Equipments />, id: 3 },
-    { tabName: "Reviews", component: <Reviews />, id: 4 },
+    { tabName: "Personal Information", component: <PersonalInformation />, id: 1 },
+    { tabName: "Payment Details", component: <PaymentDetails />, id: 2 },
+    { tabName: "System Preferences", component: <SystemPreferences />, id: 3 },
   ];
   return (
     <>
