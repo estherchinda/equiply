@@ -41,6 +41,11 @@ export const cards = [
       title: "Hand-held Sprayer - Nnewi",
       subtitle: "₦1,200/day",
     },
+    // {
+    //   image: "/tools/drone-3.svg",
+    //   title: "Drone - Port Harcourt",
+    //   subtitle: "₦14,000/day",
+    // },
   ];
 
   export const howItWorks = [

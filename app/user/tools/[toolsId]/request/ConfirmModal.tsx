@@ -87,7 +87,7 @@ export default function ConfirmModal({
       </div>
       <div>
         <h3 className="font-bold text-lg leading-[23px]">Terms and Conditions</h3>
-        <p className="text-sm leading-6">By confirming this booking, you agree to abide by the terms and conditions set forth by Equiply and the equipment owner. Please review these terms carefully before proceeding.</p>
+        <p className="text-sm leading-6">By confirming this booking, you agree to abide by the <a href="#" className="text-[#b2cabb] underline">terms and conditions</a> set forth by Equiply. Please review these terms carefully before proceeding.</p>
       </div>
         <div className="flex justify-between mt-6 items-center">
             <div className="w-[180px]">

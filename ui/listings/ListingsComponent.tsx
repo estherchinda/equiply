@@ -53,13 +53,13 @@ export default function ListingsComponent() {
       {userListings.length === 0 ? (
         <section className="flex flex-col justify-center items-center gap-3 mt-10">
           <Image
-            src={"/orders-empty.svg"}
-            alt="No Orders Available"
+            src={"/listings-empty.svg"}
+            alt="No Equipments Available"
             width={300}
             height={200}
           />
           <Heading
-            content="No orders yet"
+            content="No Listings yet"
             marginBottom="0"
             subtitle="Start sharing your equipment and earning today."
             className="text-center"
@@ -68,7 +68,12 @@ export default function ListingsComponent() {
         </section>
       ) : (
         <section className="space-y-3">
-          <Heading content="Your listings" />
+          <div className="flex justify-between items-center w-full">
+            <Heading content="Your listings" />
+            <div className="w-[200px]">
+              <Button content="Create Listing" />
+            </div>
+          </div>
           <SearchInput
             placeholder="Search list"
             value={query}

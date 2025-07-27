@@ -11,7 +11,7 @@ import {
   testimonials,
   safetyAndTrust,
 } from "@/lib/landing";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -60,20 +60,20 @@ export default function Home() {
           </div>
 
           {/* featured equipment */}
-          <div className="relative">
+          <div className="relative w-full">
             <Heading content="Featured Equipments" />
-            <button className="absolute top-[40%] -left-16 h-10 w-10 rounded-full bg-[#1C3324] border border-[#366347] text-white cursor-pointer flex justify-center items-center">
+            {/* <button className="absolute top-[40%] -left-16 h-10 w-10 rounded-full bg-[#1C3324] border border-[#366347] text-white cursor-pointer flex justify-center items-center">
               <FaArrowLeft />
             </button>
 
             <button className="absolute top-[40%] -right-16 h-10 w-10 rounded-full bg-[#1C3324] border border-[#366347] text-white cursor-pointer flex justify-center items-center">
               <FaArrowRight />
-            </button>
+            </button> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3 w-full">
               {featuredEquipments.map((f, i) => (
                 <div key={i} className="space-y-3">
-                  <div className="w-full md:w-[300px] h-[200px] relative">
+                  <div className="w-full md:w-full h-[200px] relative">
                     <Image
                       src={f.image}
                       alt={f.title}
