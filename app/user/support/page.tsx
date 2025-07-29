@@ -2,7 +2,7 @@ import Heading from "@/ui/display/HeadingComponent";
 import FAQ from "@/ui/support/FAQ";
 
 export const metadata = {
-    title: "Support - Equiply",
+    title: "Support & Help Center - Equiply",
     description: "Get help and support for your account and tools",
 };
 

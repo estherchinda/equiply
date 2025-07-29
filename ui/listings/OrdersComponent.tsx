@@ -149,7 +149,7 @@ export default function RentalsComponent() {
                           {order.location}
                         </td>
                         <td className="py-6 px-6 text-[#A8BFA8] leading-relaxed capitalize">
-                          Edit
+                          Details
                         </td>
                       </tr>
                     ))}

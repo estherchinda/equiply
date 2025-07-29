@@ -16,8 +16,8 @@ export default function Heading ({
     subtitle,
 }: HeadingProps) {
     return (
-        <div className="space-y-3">
-            <h1 className={`text-[22px] font-bold leading-7 mb-${marginBottom} ${className}`}>{content}</h1>
+        <div className={`space-y-3 ${className}`}>
+            <h1 className={`text-[22px] font-bold leading-7 mb-${marginBottom}`}>{content}</h1>
             <p className="text-sm leading-5">{subtitle}</p>
             {/* {isWithLink && <Link href={href} className="hover:underline">See all</Link>} */}
         </div>

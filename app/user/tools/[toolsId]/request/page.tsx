@@ -6,6 +6,7 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import useDateRange from "@/utils/request";
 import ConfirmModal from "./ConfirmModal";
 import { useState } from "react";
+import AgentModal from "./AgentModal";
 
 type DateRange = {
   from?: Date;
@@ -18,6 +19,7 @@ const formatMonthYear = (date: Date) => {
     'July', 'August', 'September', 'October', 'November', 'December'];
   return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
+
 
 const getDaysInMonth = (year: number, month: number) => {
   return new Date(year, month + 1, 0).getDate();
@@ -160,6 +162,7 @@ const CalendarMonth = ({
   );
 };
 
+
 // Next.js page component - no custom props needed
 export default function RequestPage() {
   // Handle date changes internally or use state management
@@ -186,6 +189,7 @@ export default function RequestPage() {
   } = useDateRange(handleDateChange, handleContinue);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAgentList, setIsAgentList] = useState(false);
 
   return (
     <div className="min-h-screen text-white p-6">
@@ -241,7 +245,7 @@ export default function RequestPage() {
               />
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full relative">
             {/* Availability Section */}
             <div className="mb-6">
               <Heading content="Availability" marginBottom="5" />
@@ -256,6 +260,18 @@ export default function RequestPage() {
               <p className="text-gray-400 text-sm">
                 {formatPrice()}
               </p>
+            </div>
+            <div className="absolute bottom-8 right-0">
+              <label htmlFor="agent" className="text-base space-x-2 flex items-center">
+                <input 
+                type="checkbox" 
+                name="agent" 
+                id="agent" 
+                className="h-[18px] w-[18px] rounded-2xl accent-[#587262] border-white border"
+                onClick={() => setIsAgentList(true)}
+                />
+                <span>I do not have experience operating this tool.</span>
+              </label>
             </div>
           </div>
         </div>
@@ -285,6 +301,13 @@ export default function RequestPage() {
           //   setIsModalOpen(false);
           // }}
         />
+
+        {isAgentList && (
+          <AgentModal
+          isOpen={isAgentList}
+          onClose={() => setIsAgentList(false)}
+          />
+        )}
       </div>
     );
 }
