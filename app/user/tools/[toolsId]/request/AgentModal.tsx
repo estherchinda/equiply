@@ -34,7 +34,7 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
       },
     },
     {
-      name: "Mark Angus",
+      name: "Marcus Angus",
       image: "/agent-3.jpg",
       ratings: {
         1: true,
@@ -56,7 +56,7 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
         {agents.map((agent, index) => (
           <div
             key={index}
-            className="cursor-pointer hover:bg-[#2f503d] p-4 rounded-md flex flex-col h-fit w-[125px]"
+            className="cursor-pointer p-4 rounded-md flex flex-col h-fit w-[125px]"
           >
             <div className="h-20 w-20 relative overflow-hidden rounded-full">
               <Image
@@ -66,7 +66,7 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
                 className="object-cover"
               />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 mt-1.5">
               <h2 className="text-sm font-semibold truncate">{agent.name}</h2>
               <div className="w-full flex-col justify-end items-center space-y-5">
                 <div className="flex gap-0.5 items-center">
@@ -91,6 +91,7 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
                   ))}
                 </div>
               </div>
+              <p className="text-xs text-center p-1.5 rounded-md w-full bg-[#3b5847] my-1">Get</p>
             </div>
           </div>
         ))}

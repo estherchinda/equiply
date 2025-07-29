@@ -32,7 +32,7 @@ export default function NotificationTab() {
     <div className="relative">
       <div
         onClick={openTab}
-        className="h-[40px] w-[40px] rounded-full flex justify-center items-center text-white text-2xl cursor-pointer bg-[#264533]"
+        className="h-[50px] w-[50px] rounded-full flex justify-center items-center text-white text-2xl cursor-pointer bg-[#264533]"
       >
         {isTabOpen ? <RiNotificationFill /> : <RiNotificationLine />}
       </div>

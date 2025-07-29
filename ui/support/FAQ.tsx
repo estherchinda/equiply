@@ -26,7 +26,7 @@ export default function FAQ() {
       answer: "You can list equipment from the listings page by clicking on 'Your Listings'. Fill out the form with your equipment details under the 'Listings' tab and submit it for review.",
     },
     {
-      question: "What are the paymentoptions?",
+      question: "What are the payment options?",
       answer: "We accept all major credit cards, Opay, and bank transfers.",
     },
   ];
@@ -67,7 +67,7 @@ export default function FAQ() {
       )}
       <Heading content="Contact Support" subtitle="If you can't find the answer you're looking for, please don't hesitate to reach out to our support team. We're here to help!" />
       <div className="w-[250px]">
-        <Button content="Contact support" />
+        <Button content="Contact support" href="/user/support/contact" />
       </div>
     </div>
   );
