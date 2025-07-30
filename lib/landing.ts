@@ -28,17 +28,17 @@ export const cards = [
   export const featuredEquipments = [
     {
       image: "/tractor.svg",
-      title: "Tractor - Onitsha Region",
+      title: "Tractor - Choba Community",
       subtitle: "₦15,000/day",
     },
     {
       image: "/rotavator.svg",
-      title: "Rotavator - Awka Ibom",
+      title: "Rotavator - Rumuokoro",
       subtitle: "₦5,000/day",
     },
     {
       image: "/sprayer.svg",
-      title: "Hand-held Sprayer - Nnewi",
+      title: "Hand-held Sprayer - Woji Road",
       subtitle: "₦1,200/day",
     },
     // {

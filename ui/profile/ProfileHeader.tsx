@@ -30,7 +30,7 @@ export default function ProfileHeader() {
           <div>
             <Heading content="Chinedu Emeka" marginBottom="0" />
             <p className="text-sm text-[#94C7A8] font-normal leading-6">
-              Farmer in Owerri, Nigeria
+              Farmer in Port Harcourt, Nigeria
             </p>
           </div>
         </div>

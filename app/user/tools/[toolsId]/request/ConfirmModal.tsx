@@ -4,8 +4,8 @@ import Modal from "@/ui/display/Modal";
 import Heading from "@/ui/display/HeadingComponent";
 import Button from "@/ui/forms/Button";
 import Image from "next/image";
-import { BsCalendar2 } from "react-icons/bs";
 import { FaNairaSign } from "react-icons/fa6";
+import { RiCalendarLine } from "react-icons/ri";
 
 
 type BookingTabProps = {
@@ -17,7 +17,7 @@ type BookingTabProps = {
 }
 const BookingTab = ({heading, subheading, subtitle, image, icon}: BookingTabProps) => {
     return (
-        <div>
+        <div className="w-full">
           <h3 className="font-bold text-lg leading-[23px]">{heading}</h3>
           <div className="w-full flex justify-between items-center bg-[#1C3324] p-2.5 mt-2">
             <div className="gap-4 flex items-center">
@@ -77,13 +77,20 @@ export default function ConfirmModal({
           heading="Rental Period"
           subheading="2 days"
           subtitle="June 1 - June 3"
-          icon={<BsCalendar2 className="w-5 h-5" />}
+          icon={<RiCalendarLine className="w-5 h-5" />}
         />
-        <BookingTab
-          heading="Price"
-          subheading="₦ 10,000"
-          icon={<FaNairaSign className="text-xl"/>}
-        />
+        <div className="flex items-center gap-4">
+          <BookingTab
+            heading="Price"
+            subheading="₦ 10,000"
+            icon={<FaNairaSign className="text-xl"/>}
+          />
+          <BookingTab
+          heading="Agent"
+          subheading="Mason Emenike"
+          image="/agent-1.jpg"
+          />
+        </div>
       </div>
       <div>
         <h3 className="font-bold text-lg leading-[23px]">Terms and Conditions</h3>

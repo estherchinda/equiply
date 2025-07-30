@@ -15,10 +15,10 @@ export const tools = [
    condition: "Excellent",
    availability: "Available",
    pricing: {
-     dailyRate: 250,
-     weeklyRate: 1400,
-     monthlyRate: 4800,
-     secureDeposit: 1200,
+     dailyRate: "1,500",
+     weeklyRate: "10,500",
+     monthlyRate: "42,000",
+     secureDeposit: "12,600",
    },
    distance: 8, // Distance in miles for local rentals
 },
@@ -38,10 +38,10 @@ export const tools = [
     condition: "Used",
     availability: "Available",
     pricing: {
-      dailyRate: 150,
-      weeklyRate: 900,
-      monthlyRate: 3000,
-      secureDeposit: 500,
+      dailyRate: "10,000",
+      weeklyRate: "50,000",
+      monthlyRate: "150,000",
+      secureDeposit: "20,000",
     },
     distance: 2, // Distance in miles for local rentals
   },
@@ -61,10 +61,10 @@ export const tools = [
     condition: "Used",
     availability: "Available",
     pricing: {
-      dailyRate: 40,
-      weeklyRate: 240,
-      monthlyRate: 800,
-      secureDeposit: 150,
+      dailyRate: "2,000",
+      weeklyRate: "20,000",
+      monthlyRate: "65,000",
+      secureDeposit: "18,000",
     },
     distance: 10, // Distance in miles for local rentals
   },
