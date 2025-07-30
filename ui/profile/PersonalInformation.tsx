@@ -29,13 +29,13 @@ export default function PersonalInformation() {
                     <Input
                         label="First Name"
                         value={userData.firstName}
-                        placeholder="Chinedu Emeka"
+                        placeholder="Esther Chinda"
                         onChange={handleInputChange}
                     />
                     <Input
                         label="Email Address"
                         value={userData.email}
-                        placeholder="chineduemeks@gmail.com"
+                        placeholder="estherchinda@gmail.com"
                         onChange={handleInputChange}
                     />
                     <Input

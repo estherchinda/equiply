@@ -9,7 +9,11 @@ import { useSidebar } from "@/context/SidebarContext";
 import NotificationTab from "./NotificationTab";
 
 export default function Navigation() {
-  const links = ["About", "How it works", "Pricing"];
+  const links = [
+    {href: "", name: "How it works"},
+    {href: "", name: "About"},
+    {href: "/login", name: "Login"},
+  ];
   const pathname = usePathname();
   const { openMobile } = useSidebar();
 
@@ -43,12 +47,16 @@ export default function Navigation() {
       ) : (
         <ul className="text-white gap-9 hidden md:flex">
           {links.map((link, index) => (
-            <li
-              key={index}
-              className="hover:cursor-pointer hover:text-[#A6F2C4] nav-link"
+            <Link
+            href={link.href}
+            key={index}
             >
-              {link}
-            </li>
+              <li
+                className="hover:cursor-pointer hover:text-[#A6F2C4] nav-link"
+              >
+                {link.name}
+              </li>
+            </Link>
           ))}
         </ul>
       )}
