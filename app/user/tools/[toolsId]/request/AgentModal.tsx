@@ -3,6 +3,7 @@
 import Heading from "@/ui/display/HeadingComponent";
 import Modal from "@/ui/display/Modal";
 import Image from "next/image";
+import { useState } from "react";
 
 type AgentModalProps = {
   isOpen: boolean;
@@ -45,6 +46,12 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
       },
     },
   ];
+
+  const [isClicked, setIsClicked] =  useState(0);
+
+  const handleSelect = (index: number) => {
+    setIsClicked(index);
+  }
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <Heading
@@ -52,11 +59,11 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
         subtitle="Find an agent who can assist you in equipment utility."
         className="text-center"
       />
-      <div className="h-40 flex justify-between items-center mx-auto my-4">
+      <div className="h-40 flex justify-between items-center mx-auto my-10">
         {agents.map((agent, index) => (
           <div
             key={index}
-            className="cursor-pointer p-4 rounded-md flex flex-col h-fit w-[125px]"
+            className={`cursor-pointer p-4 rounded-md flex flex-col h-fit w-[125px] ${isClicked === index && "border-3 border-[#a5f2c4]"}`}
           >
             <div className="h-20 w-20 relative overflow-hidden rounded-full">
               <Image
@@ -91,7 +98,7 @@ export default function AgentModal({ isOpen, onClose }: AgentModalProps) {
                   ))}
                 </div>
               </div>
-              <p className="text-xs text-center p-1.5 rounded-md w-full bg-[#3b5847] my-1">Get</p>
+              <p onClick={() => handleSelect(index)} className="text-xs text-center p-1.5 rounded-md w-full bg-[#3b5847] my-1">Get</p>
             </div>
           </div>
         ))}
